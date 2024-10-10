@@ -1,0 +1,30 @@
+SMAP
+addStudent_jsp.java
+JSP
+*S JSP
+*F
++ 0 addStudent.jsp
+addStudent.jsp
++ 1 header.jsp
+includes/header.jsp
++ 2 column_left_home.jsp
+includes/column_left_home.jsp
++ 3 column_right_news.jsp
+includes/column_right_news.jsp
++ 4 footer.jsp
+includes/footer.jsp
+*L
+5,7:55
+1#1,13:61
+13:73,2
+14,19:75
+11#0:94,2
+1#2,21:96
+12#0,31:117
+1#3,10:147
+42#0:157,2
+1#4:159
+2:160,5
+3,4:165
+43#0:169,2
+*E
