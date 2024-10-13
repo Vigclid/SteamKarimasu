@@ -1,4 +1,4 @@
-package model.DTO;
+package model.dto;
 
 public class userDTO{
     private int id;
