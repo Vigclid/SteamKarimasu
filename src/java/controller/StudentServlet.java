@@ -63,7 +63,7 @@ public class StudentServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         processRequest(request, response);
     }
-
+//
     /**
      * Handles the HTTP <code>POST</code> method.
      *
