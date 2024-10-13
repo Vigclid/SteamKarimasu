@@ -30,8 +30,7 @@
                     <h1>Login</h1>
                 </div>
                 <br>
-
-                <form action = "LoginServlet" METHOD = "POST">
+                <form action="LoginServlet" method="POST">
                     <div class="login_infor">
                         <div class="inputUP">
                             <label for="username" class=""></label>
@@ -52,22 +51,15 @@
                             </div>
 
                             <div class="forgot_password">
-                                <a href="">Forgot Password?</a>
+                                <a href="forgotPage.html">Forgot Password?</a>
                             </div>
                         </div>
                     </div>
 
-                    <a class="login_card" href="">
-                        <div class="Login" >
+                    <input type="submit" class="login_card" value="Login">
 
-                            <input type="submit" value="Login" class="submit-logging"
-                                   style="background-color: transparent; border: none;
-                                   color: inherit;">
-                        </div>
-                    </a>
 
                 </form>
-
 
 
 
@@ -78,24 +70,25 @@
 
                 <div class="Continue_Item">
 
-                    <a  href="https://www.google.com/" target="_blank">
+                    <a  href="">
                         <div class="ortherLogin">
-                            <img src="assets/img/GoogleLogo.png" alt="Steam google">
-                        </div>
-                    </a>
-
-
-                    <a href="https://store.steampowered.com/" target="_blank">
-                        <div class="ortherLogin">
-                            <img src="assets/img/SteamLogo.png" alt="Steam login">
+                            <img src="assets/img/GoogleLogo.png" alt="">
                         </div>
                     </a>
 
 
 
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="">
                         <div class="ortherLogin">
-                            <img src="assets/img/FacebookLogo.png" alt="Login facebook">
+                            <img src="assets/img/SteamLogo.png" alt="">
+                        </div>
+                    </a>
+
+
+
+                    <a href="">
+                        <div class="ortherLogin">
+                            <img src="assets/img/FacebookLogo.png" alt="">
                         </div>
                     </a>
 
@@ -119,6 +112,8 @@
 
     </div>
 </div>
+
+
 
 </body>
 </html>
