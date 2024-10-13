@@ -112,6 +112,7 @@
 //        studentDAO.addStudent(new student(id,name,Gender,DOB));
 //        studentList(request,response);
 //    }
+//
 //    protected void deleteStudent(HttpServletRequest request, HttpServletResponse response)
 //            throws ServletException, IOException {
 //        StudentDAO studentDAO = new StudentDAO();
