@@ -20,7 +20,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Java EE 6" level="project" />
     <orderEntry type="library" name="mssql-jdbc-10.2.3.jre17" level="project" />
+    <orderEntry type="library" name="Java EE 6 (2)" level="project" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>

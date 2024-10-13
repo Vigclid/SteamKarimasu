@@ -4,20 +4,16 @@
  */
 package controller;
 
-import model.StudentDAO;
-import model.student;
+import model.Repository.StudentDAO;
+import model.Entity.student;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import static java.lang.System.out;
 
 /**
  *

@@ -1,6 +1,7 @@
-package model;
+package model.Repository;
 
 import db.ConnectDB;
+import model.Entity.student;
 
 import java.sql.*;
 import java.time.LocalDate;
