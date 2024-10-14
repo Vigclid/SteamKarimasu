@@ -1,12 +1,17 @@
 
 package controller;
 
+import common.CookieUtils;
+import repository.DAO.LoginDAO;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -54,7 +59,17 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        processRequest(request, response);
+        String username = CookieUtils.get("username",request);
+
+        if (username != null && !username.isEmpty()) {
+            request.setAttribute("message","Login ổn");
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+            return;
+        }
+
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**
@@ -71,8 +86,33 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         
-        processRequest(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
+//        if (username != null && password != null){
+//            if (new CookieUtils().get(username,request) != null){
+//                HttpSession session = request.getSession();
+//                session.setAttribute("username", username);
+//
+//            }
+//        }
+        int check = new LoginDAO().LoginCheck(username,password);
+        if (check == 0 ){
+            request.setAttribute("message","Sai tên đăng nhập hoặc mật khẩu");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        }
+        if (check == 1 ){
+
+            request.setAttribute("message","Hợp ní");
+            request.getRequestDispatcher("adminPage.jsp").forward(request, response);
+        }
+
+        if (check == 2 ){
+
+            request.setAttribute("message","Oge ôs");
+            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+        }
     }
 
     /**
