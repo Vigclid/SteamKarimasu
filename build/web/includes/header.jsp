@@ -26,7 +26,7 @@
                     Searching</a></li>
                     <li><a href="staff.jsp">
                     Staff</a></li>
-            <li><a href="">
+            <li><a href="news.jsp">
                     News</a></li>
         </ul>
     </nav>

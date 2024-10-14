@@ -8,7 +8,7 @@ public class TestDB implements DatabaseInfo{
     public static void main(String[] args) throws Exception {
         ConnectDB db = ConnectDB.getInstance();
         Connection con = db.openConnecion();
-        String sql = "SELECT * FROM [dbo].[Users]";
+        String sql = "SELECT * FROM master.users;";
         Statement stmt = con.createStatement();
 
         ResultSet rs = stmt.executeQuery(sql);

@@ -2,6 +2,7 @@
 article, aside, figure, footer, header, nav, section, tieude {
     display: block;
 }
+
 html {
     background-image: -webkit-linear-gradient(left, #facd8a 100%, white 10%);
 }

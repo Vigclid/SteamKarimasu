@@ -1,7 +1,7 @@
 package model.dto;
 
 public class userDTO{
-    private int id;
+
     private String username;
     private String Email;
     private String phonenumber;
@@ -9,27 +9,22 @@ public class userDTO{
     private String month;
     private String year;
     private String password;
+    private String dob;
+    private String comfirmPassword;
 
     public userDTO() {
 
     }
 
-    public userDTO(String password, String year, String month, String day, String phonenumber, String email, String username) {
+    public userDTO(String username, String email, String phonenumber, String day, String month, String year, String password, String comfirmPassword) {
         this.password = password;
         this.year = year;
         this.month = month;
         this.day = day;
         this.phonenumber = phonenumber;
-        Email = email;
+        this.Email = email;
         this.username = username;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.comfirmPassword = comfirmPassword;
     }
 
     public String getUsername() {
@@ -86,5 +81,21 @@ public class userDTO{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getComfirmPassword() {
+        return comfirmPassword;
+    }
+
+    public void setComfirmPassword(String comfirmPassword) {
+        this.comfirmPassword = comfirmPassword;
     }
 }
