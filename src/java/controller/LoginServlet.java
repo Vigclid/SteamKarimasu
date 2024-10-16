@@ -84,11 +84,11 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset  =UTF-8");
         
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
+        String remember = request.getParameter("remember_me");
 //        if (username != null && password != null){
 //            if (new CookieUtils().get(username,request) != null){
 //                HttpSession session = request.getSession();
@@ -97,22 +97,27 @@ public class LoginServlet extends HttpServlet {
 //            }
 //        }
         int check = new LoginDAO().LoginCheck(username,password);
-        if (check == 0 ){
-            request.setAttribute("message","Sai tên đăng nhập hoặc mật khẩu");
+        if (check == 0) {
+            request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu");
             request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            // Tạo session cho người dùng
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
 
+            // Nếu chọn "Remember me", lưu cookie
+            if ("on".equals(remember)) {
+                CookieUtils.add("username", username, 1, response);
+            }
+
+            // Chuyển hướng tùy thuộc vào loại người dùng
+            if (check == 1) {
+                response.sendRedirect("adminPage.jsp");
+            } else if (check == 2) {
+                response.sendRedirect("dashboard.jsp");
+            }
         }
-        if (check == 1 ){
 
-            request.setAttribute("message","Hợp ní");
-            request.getRequestDispatcher("adminPage.jsp").forward(request, response);
-        }
-
-        if (check == 2 ){
-
-            request.setAttribute("message","Oge ôs");
-            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
-        }
     }
 
     /**

@@ -1,4 +1,6 @@
-<%--
+<%@ page import="common.CookieUtils" %>
+<%@ page import="javax.servlet.http.HttpSession" %><%--
+
   Created by IntelliJ IDEA.
   User: Admin
   Date: 10/13/2024
@@ -20,6 +22,18 @@
     <link rel="stylesheet" href="styles/css/loginPage.css">
 </head>
 <body>
+<%
+    // Kiểm tra xem có Cookie lưu username hay không
+    String cookieUsername = CookieUtils.get("username", request);
+    HttpSession currentSession = request.getSession(false);
+
+    // Nếu có cookie, tự động tạo session và chuyển hướng
+    if (cookieUsername != null && currentSession.getAttribute("username") != null) {
+        currentSession.setAttribute("username", cookieUsername);
+        response.sendRedirect("dashboard.jsp");
+        return;
+    }
+%>
 
 <div class="container baseCard">
     <div class="row">
