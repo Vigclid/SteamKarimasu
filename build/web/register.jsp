@@ -27,12 +27,12 @@
                 <div class="login">
                     <div class="inputUP">
                         <label for="username" class=""></label>
-                        <input type="text" name="username" id="username" placeholder="Email Or Username">
+                        <input type="text" name="username_header" id="username" placeholder="Email Or Username">
                     </div>
 
                     <div class="inputUP">
                         <label for="password" class=""></label>
-                        <input type="text" class="" name="password" placeholder="Password" id="password">
+                        <input type="text" class="" name="password_header" placeholder="Password" id="password">
                     </div>
 
                     <input type="submit" class="login_card" value="Login">
@@ -63,17 +63,17 @@
                 <div class="date">
                     <div class="day">
                         <label ></label>
-                        <input type="text" name="day" placeholder="Day">
+                        <input type="number" name="day" placeholder="Day">
                     </div>
 
                     <div class="month">
                         <label ></label>
-                        <input type="text" name="month" placeholder="Month">
+                        <input type="number" name="month" placeholder="Month">
                     </div>
 
                     <div class="year">
                         <label ></label>
-                        <input type="text" name="year" placeholder="Year">
+                        <input type="number" name="year" placeholder="Year">
                     </div>
                 </div>
                 <br>
@@ -84,7 +84,7 @@
                 <br>
                 <div class="comfirm_password">
                     <label for=></label>
-                    <input type="text" name="comfirm_password" placeholder="Comfirm Password">
+                    <input type="text" name="confirm_password" placeholder="Comfirm Password">
                 </div>
 
                 <input type="submit" class="Create" value="Create Accout">

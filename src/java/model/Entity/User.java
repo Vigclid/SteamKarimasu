@@ -1,43 +1,44 @@
 package model.Entity;
 
 public class User {
-    private int userId;
-    private String username;
+    private int Userid;
+    private String Username;
     private String email;
-    private String dob;  // Có thể sử dụng LocalDate nếu cần
-    private boolean active;
-    private String password;
-    private String phoneNumber;
+    private String Dob;  // Có thể sử dụng LocalDate nếu cần
+    private byte Active;
+    private String Pass;
+    private String phonenumber;
 
     // Constructor không tham số
     public User() {}
 
     // Constructor có tham số
-    public User(int userId, String username, String email, String dob, boolean active, String password, String phoneNumber) {
-        this.userId = userId;
-        this.username = username;
+    public User(int userId, String username, String email, String dob, byte active, String password, String phoneNumber) {
+        this.Userid = userId;
+        this.Username = username;
         this.email = email;
-        this.dob = dob;
-        this.active = active;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
+        this.Dob = dob;
+        this.Active = active;
+        this.Pass = password;
+        this.phonenumber = phoneNumber;
     }
 
     // Getter và Setter
-    public int getUserId() {
-        return userId;
+
+    public int getUserid() {
+        return Userid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserid(int userid) {
+        Userid = userid;
     }
 
     public String getUsername() {
-        return username;
+        return Username;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        Username = username;
     }
 
     public String getEmail() {
@@ -49,48 +50,34 @@ public class User {
     }
 
     public String getDob() {
-        return dob;
+        return Dob;
     }
 
     public void setDob(String dob) {
-        this.dob = dob;
+        Dob = dob;
     }
 
-    public boolean isActive() {
-        return active;
+    public byte getActive() {
+        return Active;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setActive(byte active) {
+        Active = active;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return Pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        Pass = pass;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    // Phương thức để hiển thị thông tin đối tượng User
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", dob='" + dob + '\'' +
-                ", active=" + active +
-                ", password='" + password + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 }

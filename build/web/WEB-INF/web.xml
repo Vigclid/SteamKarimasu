@@ -3,13 +3,17 @@
     <servlet>
         <servlet-name>UserRegister</servlet-name>
         <servlet-class>controller.UserRegister</servlet-class>
+        <init-param>
+        <param-name> driverClass </param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserRegister</servlet-name>
         <url-pattern>/UserRegister</url-pattern>
     </servlet-mapping>
     <error-page>
-    <error-code>404</error-code>
-    <location>/error_404.jsp</location>
-</error-page>
+        <error-code>404</error-code>
+        <location>/</location>
+    </error-page>
 </web-app>

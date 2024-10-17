@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="mssql-jdbc-10.2.3.jre17">
+  <library name="ojdbc11">
     <CLASSES>
-      <root url="jar://E:/coding/PRJ301/sqljdbc4.jar!/" />
+      <root url="jar://E:/coding/PRJ301/ojdbc11.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,7 +1,7 @@
-package model.dto;
+package controller.dto;
 
 public class userDTO{
-
+    private int id;
     private String username;
     private String Email;
     private String phonenumber;
@@ -25,6 +25,14 @@ public class userDTO{
         this.Email = email;
         this.username = username;
         this.comfirmPassword = comfirmPassword;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -51,12 +59,12 @@ public class userDTO{
         Email = email;
     }
 
-    public String getDay() {
-        return day;
+    public String getYear() {
+        return year;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getMonth() {
@@ -67,12 +75,12 @@ public class userDTO{
         this.month = month;
     }
 
-    public String getYear() {
-        return year;
+    public String getDay() {
+        return day;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getPassword() {

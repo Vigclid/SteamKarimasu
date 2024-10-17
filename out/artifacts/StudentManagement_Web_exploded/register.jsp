@@ -32,7 +32,7 @@
 
                     <div class="inputUP">
                         <label for="password" class=""></label>
-                        <input type="text" class="" name="password_header" placeholder="Password" id="password">
+                        <input type="password" class="" name="password_header" placeholder="Password" id="password">
                     </div>
 
                     <input type="submit" class="login_card" value="Login">
@@ -52,39 +52,75 @@
                 <br>
                 <div class="email">
                     <label ></label>
-                    <input type="text" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email">
                 </div>
                 <br>
                 <div class="phonenumber">
                     <label ></label>
-                    <input type="text" name="phonenumber" placeholder="Phone Number">
+                    <input type="number" name="phonenumber" placeholder="Phone Number">
                 </div>
                 <br>
                 <div class="date">
                     <div class="day">
                         <label ></label>
-                        <input type="text" name="day" placeholder="Day">
+                        <select name="day" required>
+                            <option value="" disabled selected>Day</option>
+                            <script>
+                                const daySelect = document.querySelector('select[name="day"]');
+                                for (let i = 1; i <= 31; i++) {
+                                    const option = document.createElement('option');
+                                    option.value = i;
+                                    option.textContent = i; // Set the text to the day number
+                                    daySelect.appendChild(option);
+                                }
+                            </script>
+                        </select>
                     </div>
 
                     <div class="month">
                         <label ></label>
-                        <input type="text" name="month" placeholder="Month">
+                        <select name="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <!-- Generate options for months (1-12) -->
+                            <script>
+                                const monthSelect = document.querySelector('select[name="month"]');
+                                for (let i = 1; i <= 12; i++) {
+                                    const option = document.createElement('option');
+                                    option.value = i;
+                                    option.textContent = i; // You can replace this with the month name if you want
+                                    monthSelect.appendChild(option);
+                                }
+                            </script>
+                        </select>
                     </div>
 
                     <div class="year">
                         <label ></label>
-                        <input type="text" name="year" placeholder="Year">
+                        <select name="year" required>
+                            <option value="" disabled selected>Year</option>
+                            <!-- Generate options for years (1990-2100) -->
+                            <script>
+                                const yearSelect = document.querySelector('select[name="year"]');
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear - 100; i <= currentYear + 20; i++) {
+                                    const option = document.createElement('option');
+                                    option.value = i;
+                                    option.textContent = i;
+                                    yearSelect.appendChild(option);
+                                }
+                            </script>
+                        </select>
                     </div>
                 </div>
                 <br>
                 <div class="password">
                     <label for="password"></label>
-                    <input type="text" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
                 <br>
                 <div class="comfirm_password">
                     <label for=></label>
-                    <input type="text" name="comfirm_password" placeholder="Comfirm Password">
+                    <input type="password" name="confirm_password" placeholder="Comfirm Password">
                 </div>
 
                 <input type="submit" class="Create" value="Create Accout">

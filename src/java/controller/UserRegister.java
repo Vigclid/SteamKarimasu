@@ -1,19 +1,18 @@
 
-
-
 package controller;
 
-import model.dto.userDTO;
+import model.Entity.User;
 import model.repository.impl.userRepositoryimpl;
-import model.repository.userRepository;
-
+import controller.dto.userDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import static java.awt.SystemColor.window;
 
 /**
  *
@@ -50,54 +49,60 @@ public class UserRegister extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String Username = null;
-        String password = null;
-        String Email = null;
-        String phone = null;
-        String day = null;
-        String month = null;
-        String year = null;
-        String confirmpassword = null;
+        PrintWriter out = response.getWriter();
+        String Username = request.getParameter("username");
+        String Email = request.getParameter("email");
+        String day = request.getParameter("day");
+        String month = request.getParameter("month");
+        String year = request.getParameter("year");
+        String phone = request.getParameter("phonenumber");
+        String Pass = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirm_password");
 
-
-
-        Username = request.getParameter("username");
-        Email = request.getParameter("email");
-        day = request.getParameter("day");
-        month = request.getParameter("month");
-        year = request.getParameter("year");
-        phone = request.getParameter("phonenumber");
-        password = request.getParameter("password");
-        confirmpassword = request.getParameter("comfirm_password");
-        int a = 1;
-        userDTO user = new userDTO(Username, Email, day, month, year, phone, password, confirmpassword);
-
+        if (Username == null || Email == null || phone == null || Pass == null || confirmPassword == null || day == null || month == null || year == null ||
+                Username.isEmpty() || Email.isEmpty() || phone.isEmpty() || Pass.isEmpty() || confirmPassword.isEmpty() || day.isEmpty() || month.isEmpty() || year.isEmpty()) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error. Please fill all fields');");
+            out.println("location='register.jsp';");
+            out.println("</script>");
+            return; // Dừng thực thi
+        } else if (!Pass.equals(confirmPassword)) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error. Passwords do not match');");
+            out.println("location='register.jsp';");
+            out.println("</script>");
+            return;
+        }
+        else if(phone.length() <= 12 && phone.length()>= 10 &&  phone.startsWith("0") )  {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error. Phone number must have (10 - 12) number characters and start with 0')");
+            out.println("location='register.jsp';");
+            out.println("</script>");
+            return; // Dừng thực thi
+        }
+        userDTO user = new userDTO(Username, Email, phone, day, month, year, Pass, confirmPassword);
         userRepositoryimpl urimpl = new userRepositoryimpl();
-        urimpl.Register(user);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        List<User> userList = urimpl.getAllUsers();
+        boolean userExists = false;
+        for (User ur : userList) {
+            if (ur.getUsername().equals(user.getUsername()) || ur.getEmail().equals(user.getEmail())) {
+                userExists = true;
+                break; // Nếu đã tìm thấy, không cần kiểm tra nữa
+            }
+        }
 
+        if (userExists) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error. Username or Email already exists');");
+            out.println("location='register.jsp';");
+            out.println("</script>");
+        } else {
+            urimpl.Register(user);
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('User registered successfully');");
+            out.println("location='login.jsp';");
+            out.println("</script>");
+        }
 
-    }
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-    public static void main(String[] args) {
-        userDTO u = new userDTO();
-        u.setUsername("khang");
-        u.setEmail("khang@gmail.com");
-        u.setPhonenumber("09055577689");
-        u.setDay("14");
-        u.setMonth("02");
-        u.setYear("2004");
-        u.setPassword("123456");
-        u.setComfirmPassword("123456");
-        userRepositoryimpl userRepository = new userRepositoryimpl();
-        userRepository.Register(u);
     }
 }
