@@ -57,19 +57,20 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
-        String username = CookieUtils.get("username",request);
-
-        if (username != null && !username.isEmpty()) {
-            request.setAttribute("message","Login ổn");
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
-            return;
-        }
-
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+//        request.setCharacterEncoding("UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
+//        String username = CookieUtils.get("username",request);
+//
+//        if (username != null && !username.isEmpty()) {
+//            request.setAttribute("message","Login ổn");
+//            HttpSession session = request.getSession();
+//            session.setAttribute("username", username);
+//            request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+//            return;
+//        }
+//
+//        request.getRequestDispatcher("login.jsp").forward(request, response);
+        processRequest(request,response);
     }
 
     /**

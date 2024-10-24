@@ -5,7 +5,7 @@ public class user {
     private String username;
     private String email;
     private String dob;  // Có thể sử dụng LocalDate nếu cần
-    private boolean active;
+    private byte active;
     private String password;
     private String phoneNumber;
 
@@ -13,7 +13,7 @@ public class user {
     public user() {}
 
     // Constructor có tham số
-    public user(int userId, String username, String email, String dob, boolean active, String password, String phoneNumber) {
+    public user(int userId, String username, String email, String dob, byte active, String password, String phoneNumber) {
         this.userId = userId;
         this.username = username;
         this.email = email;
@@ -56,11 +56,11 @@ public class user {
         this.dob = dob;
     }
 
-    public boolean isActive() {
+    public byte isActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(byte active) {
         this.active = active;
     }
 

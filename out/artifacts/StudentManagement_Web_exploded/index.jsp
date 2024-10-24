@@ -28,7 +28,7 @@
     HttpSession currentSession = request.getSession(false);
 
     // Nếu có cookie, tự động tạo session và chuyển hướng
-    if (cookieUsername != null && currentSession.getAttribute("username") == null) {
+    if (cookieUsername != null && currentSession.getAttribute("username") != null) {
         currentSession.setAttribute("username", cookieUsername);
         response.sendRedirect("dashboard.jsp");
         return;
@@ -84,7 +84,15 @@
 
                 <div class="Continue_Item">
 
-                    <a  href="">
+                    <a  href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid
+
+                                &redirect_uri=http://localhost:5000/SteamKarimasu/LoginServlet
+
+                                &response_type=code
+
+                                &client_id=638003678670-95tt4o7buj11j1aplsf1h8m4vl23jsse.apps.googleusercontent.com
+
+                                &approval_prompt=force">
                         <div class="ortherLogin">
                             <img src="assets/img/GoogleLogo.png" alt="">
                         </div>
