@@ -1,4 +1,4 @@
-package model.DTO;
+package controller.dto;
 
 public class userDTO{
     private int id;
@@ -9,19 +9,22 @@ public class userDTO{
     private String month;
     private String year;
     private String password;
+    private String dob;
+    private String comfirmPassword;
 
     public userDTO() {
 
     }
 
-    public userDTO(String password, String year, String month, String day, String phonenumber, String email, String username) {
+    public userDTO(String username, String email, String phonenumber, String day, String month, String year, String password, String comfirmPassword) {
         this.password = password;
         this.year = year;
         this.month = month;
         this.day = day;
         this.phonenumber = phonenumber;
-        Email = email;
+        this.Email = email;
         this.username = username;
+        this.comfirmPassword = comfirmPassword;
     }
 
     public int getId() {
@@ -56,12 +59,12 @@ public class userDTO{
         Email = email;
     }
 
-    public String getDay() {
-        return day;
+    public String getYear() {
+        return year;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getMonth() {
@@ -72,12 +75,12 @@ public class userDTO{
         this.month = month;
     }
 
-    public String getYear() {
-        return year;
+    public String getDay() {
+        return day;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getPassword() {
@@ -86,5 +89,21 @@ public class userDTO{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getComfirmPassword() {
+        return comfirmPassword;
+    }
+
+    public void setComfirmPassword(String comfirmPassword) {
+        this.comfirmPassword = comfirmPassword;
     }
 }
