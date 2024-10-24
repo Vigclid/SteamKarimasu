@@ -113,9 +113,9 @@ public class LoginServlet extends HttpServlet {
 
             // Chuyển hướng tùy thuộc vào loại người dùng
             if (check == 1) {
-                response.sendRedirect("adminPage.jsp");
+                response.sendRedirect("mainPage.jsp");
             } else if (check == 2) {
-                response.sendRedirect("dashboard.jsp");
+                response.sendRedirect("mainPage.jsp");
             }
         }
 
