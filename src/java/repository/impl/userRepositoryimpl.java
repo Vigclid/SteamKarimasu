@@ -21,30 +21,62 @@ public class userRepositoryimpl implements userRepository {
         try {
             ConnectDB db = new ConnectDB();
             Connection con = db.openConnecion();
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getEmail() );
             preparedStatement.setString(3, user.getDob());
             preparedStatement.setInt(4, user.isActive());
             preparedStatement.setString(5, user.getPassword());
             preparedStatement.setString(6, user.getPhoneNumber());
+
+            try (ResultSet rs = preparedStatement.getGeneratedKeys()) {
+                if (rs.next()) {
+                    user.setUserId(rs.getInt(1));
+                }
+            }
+
+            addUserRole(user);
+
             preparedStatement.execute();
             preparedStatement.close();
             con.close();
         } catch (SQLException e) {
-            if (e.getSQLState().equals("45000")) {
+            // Kiểm tra SQLState để bắt lỗi RAISERROR từ SQL Server (mã lỗi 50000)
+            if (e.getErrorCode() == 50000) {
                 System.out.println("Trigger đã phát hiện trùng lặp username.");
             } else {
                 e.printStackTrace();
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
 
 
     }
+    public void addUserRole(user user) {
+        String sql = "INSERT INTO Userrole(Userid,Roleid) VALUES (?,?) ";
 
-    @Override
+        try {
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, user.getUserId());
+            stmt.setInt(2, 2); // Assuming roleId 2 corresponds to 'USER' role in the database
+
+            stmt.executeUpdate();
+            stmt.close();
+            con.close();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+@Override
     public List<user> getAllUsers()  {
         List<user> users = new ArrayList<>();
         String sql = "SELECT * From [dbo].[Users]";
