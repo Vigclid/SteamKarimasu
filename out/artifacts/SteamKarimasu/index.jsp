@@ -30,7 +30,7 @@
     // Nếu có cookie, tự động tạo session và chuyển hướng
     if (cookieUsername != null && currentSession.getAttribute("username") != null) {
         currentSession.setAttribute("username", cookieUsername);
-        response.sendRedirect("dashboard.jsp");
+        response.sendRedirect("mainPage.jsp");
         return;
     }
 %>

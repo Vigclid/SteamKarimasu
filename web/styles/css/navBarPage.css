@@ -1,0 +1,112 @@
+.navBar{
+    background-color: rgb(54, 51, 51);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    text-align: center;
+    z-index: 1000; /* Đảm bảo navbar luôn ở trên */
+    position: fixed; /* Giúp navbar luôn nằm trên cùng */
+    top: 0;
+    width: 100%;
+}
+
+.side-bar-button{
+    transform: scale(0.8);
+    background: none;      
+    border: none;         
+    padding: 0;            
+    margin: 0;            
+    outline: none;         
+    box-shadow: none;
+    background-color: rgb(54, 51, 51);
+    z-index: 1001;
+}
+
+.side-bar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s ease;
+    padding-top: 60px;
+}
+
+.close-side-bar{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 1.5rem;
+    color: rgb(116, 186, 21);
+    text-decoration: none;
+    transition: 0.6s ease;
+    width: 40px;
+    height: 40px;
+}
+
+.close-side-bar:hover{
+    background-color: #575757;
+}
+
+.side-bar.active {
+    width: 250px;
+}
+
+.navMenu{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.icon-nav-page{
+    margin-left: 300px;
+}
+
+.nav-search-join{
+    display: flex;
+    height: 35px;
+}
+
+.nav-search-join input{
+    height: 40px;
+}
+
+.navbar-search input{
+    border: solid rgb(112, 111, 111);
+    border-radius: 20px;
+    background-color: rgb(112, 111, 111);
+    margin-right: 30px
+}
+
+.navbar-search input::placeholder{
+    color: rgb(166, 164, 164);
+}
+
+.navbar-join-us input{
+    border: solid rgb(116, 186, 21);
+    height: 38px;
+    border-radius: 20px;
+    width: 90px;
+    color: white;
+    background-color: rgb(116, 186, 21);
+}
+
+.side-bar-items{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 35px;
+    line-height: 70px;
+}
+
+.side-bar-items a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
