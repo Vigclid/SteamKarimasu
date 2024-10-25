@@ -21,15 +21,23 @@ public class userRepositoryimpl implements userRepository {
             try {
                 ConnectDB db = new ConnectDB();
                 Connection con = db.openConnecion();
-                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                 preparedStatement.setString(1, user.getUsername());
                 preparedStatement.setString(2, user.getEmail() );
                 preparedStatement.setString(3, user.getDob());
                 preparedStatement.setInt(4, user.getActive());
                 preparedStatement.setString(5, user.getPass());
                 preparedStatement.setString(6, user.getPhonenumber());
-                preparedStatement.execute();
+                preparedStatement.executeUpdate();
 
+                try (ResultSet rs = preparedStatement.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        user.setUserid(rs.getInt(1));
+                    }
+                }
+
+                userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();
+                userRoleRepository.addUserRole(user);
                 preparedStatement.close();
                 con.close();
             } catch (SQLException e) {
@@ -87,6 +95,29 @@ public class userRepositoryimpl implements userRepository {
             }
         }
         return users;
+    }
+
+    @Override
+    public int findIdProductByName(String name)  {
+        try {
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            String sql = "SELECT Productid FROM product WHERE Productname LIKE '%" + name + "%'";
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("Productid");
+            }
+            preparedStatement.close();
+            con.close();
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
     }
 
 

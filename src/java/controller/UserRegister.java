@@ -4,6 +4,8 @@ package controller;
 import model.Entity.User;
 import model.repository.impl.userRepositoryimpl;
 import controller.dto.userDTO;
+import model.repository.impl.userRoleRepositoryImpl;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -62,8 +64,8 @@ public class UserRegister extends HttpServlet {
         if (Username == null || Email == null || phone == null || Pass == null || confirmPassword == null || day == null || month == null || year == null ||
                 Username.isEmpty() || Email.isEmpty() || phone.isEmpty() || Pass.isEmpty() || confirmPassword.isEmpty() || day.isEmpty() || month.isEmpty() || year.isEmpty()) {
             out.println("<script type=\"text/javascript\">");
-            out.println("alert('Error. Please fill all fields');");
             out.println("location='register.jsp';");
+            out.println("alert('Error. Please fill all fields');");
             out.println("</script>");
             return; // Dừng thực thi
         } else if (!Pass.equals(confirmPassword)) {
@@ -73,7 +75,7 @@ public class UserRegister extends HttpServlet {
             out.println("</script>");
             return;
         }
-        else if(phone.length() <= 12 && phone.length()>= 10 &&  phone.startsWith("0") )  {
+        else if(phone.length() != 10 &&  !phone.startsWith("0"))  {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Error. Phone number must have (10 - 12) number characters and start with 0')");
             out.println("location='register.jsp';");
@@ -85,7 +87,7 @@ public class UserRegister extends HttpServlet {
         List<User> userList = urimpl.getAllUsers();
         boolean userExists = false;
         for (User ur : userList) {
-            if (ur.getUsername().equals(user.getUsername()) || ur.getEmail().equals(user.getEmail())) {
+            if (ur.getPhonenumber().equals(user.getPhonenumber()) || ur.getEmail().equals(user.getEmail()) || ur.getUsername().equals(user.getUsername())) {
                 userExists = true;
                 break; // Nếu đã tìm thấy, không cần kiểm tra nữa
             }

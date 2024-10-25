@@ -5,20 +5,18 @@ public class Product {
     private String productName;
     private String productImage;
     private String dateOfUpdate; // Sử dụng LocalDate nếu cần
-    private int price;
-    private boolean active;
+    private String description;
 
     // Constructor không tham số
     public Product() {}
 
     // Constructor có tham số
-    public Product(int productId, String productName, String productImage, String dateOfUpdate, int price, boolean active) {
+    public Product(int productId, String productName, String productImage, String dateOfUpdate, String description) {
         this.productId = productId;
         this.productName = productName;
         this.productImage = productImage;
         this.dateOfUpdate = dateOfUpdate;
-        this.price = price;
-        this.active = active;
+        this.description = description;
     }
 
     // Getter và Setter
@@ -54,20 +52,12 @@ public class Product {
         this.dateOfUpdate = dateOfUpdate;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     // Phương thức để hiển thị thông tin đối tượng Product
@@ -78,8 +68,6 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", productImage='" + productImage + '\'' +
                 ", dateOfUpdate='" + dateOfUpdate + '\'' +
-                ", price=" + price +
-                ", active=" + active +
                 '}';
     }
 }
