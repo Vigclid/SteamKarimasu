@@ -1,0 +1,93 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#profilePage{
+    margin-top: 140px;
+}
+
+#profilePage .user-img{
+    width: 218px;
+    height: 218px;
+    margin-right: 60px;
+}
+
+#profilePage .user-img img{
+    width: 100%;
+}
+
+#profilePage .user-infor{
+    color: white;
+    line-height: 60px;
+}
+
+#profilePage .name{
+    font-size: 39px;
+}
+
+
+#profilePage .role{
+    font-size: 29px;
+}
+
+#profilePage .kcoins{
+    font-size: 29px;
+}
+
+#profilePage .user-function{
+    margin-top: 40px;
+}
+
+
+#profilePage .user-contact input{
+    background: none;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+#profilePage .main-information input{
+    color: rgb(109, 174, 21);
+}
+
+#profilePage .change-password input{
+
+}
+
+#profilePage .user-more-infor{
+    position: relative;
+    color: white;
+    height: 300px;
+    margin-top: 5px;
+}
+
+#profilePage .user-more-infor input{
+    width: 339px;
+    height: 40px;
+    background-color: rgb(54, 51, 51);
+    border: 0.2px solid rgb(93, 135, 32);
+    outline: none;
+}
+
+#profilePage .user-email{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+
+#profilePage .user-phone{
+    position: absolute;
+    top: 0%;
+    right: 10%;
+}
+
+
+#profilePage .user-date{
+    position: absolute;
+    bottom: 50%;
+    left: 0%;
+}
+

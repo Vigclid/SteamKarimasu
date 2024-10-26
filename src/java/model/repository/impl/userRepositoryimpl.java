@@ -17,7 +17,7 @@ public class userRepositoryimpl implements userRepository {
 
         String sql = "INSERT INTO master.users (Username, email, Dob,Active, Pass, phonenumber) VALUES (?, ?, ?, ?, ?, ?)";
         userConverter converter = new userConverter();
-        User user = converter.convertUserDTOtoUserEntity(userdto);
+        User user = converter.convertUserDTOtoUserEntityToRegister(userdto);
             try {
                 ConnectDB db = new ConnectDB();
                 Connection con = db.openConnecion();
@@ -118,6 +118,46 @@ public class userRepositoryimpl implements userRepository {
             throw new RuntimeException(e);
         }
         return 0;
+    }
+
+    public byte LoginCheck(String username, String password){
+        String sql = "SELECT * FROM users WHERE Username LIKE  ? AND Pass LIKE ?";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%"+username+"%");
+            stmt.setString(2, "%"+password+"%");
+            ResultSet rs = stmt.executeQuery();
+            int Tempid = 0;
+            Boolean success = false;
+            if (rs.next()){
+                Tempid = rs.getInt(1);
+                if (rs.getByte(5) != 0)    success = true;
+            }
+            if (success) {
+                sql = "SELECT ur.Roleid FROM userrole ur WHERE Userid =?";
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, Tempid);
+                rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    int roleid = rs.getInt(1);
+                    if (roleid == 1) {
+                        return 1;
+                    } else  return 2;
+                }
+            } else return 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+        return 0;
+
     }
 
 

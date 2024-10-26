@@ -8,6 +8,7 @@ public class User {
     private byte Active;
     private String Pass;
     private String phonenumber;
+    private float totalAmount;
 
     // Constructor không tham số
     public User() {}
@@ -79,5 +80,13 @@ public class User {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

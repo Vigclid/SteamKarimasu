@@ -11,6 +11,9 @@ public class userDTO{
     private String password;
     private String dob;
     private String comfirmPassword;
+    private String Role;
+    private String totalAmount;
+
 
     public userDTO() {
 
@@ -25,6 +28,16 @@ public class userDTO{
         this.Email = email;
         this.username = username;
         this.comfirmPassword = comfirmPassword;
+    }
+
+    public userDTO(int id, String role, String totalAmount, String email, String phonenumber, String dob, String username) {
+        this.id = id;
+        Role = role;
+        this.totalAmount = totalAmount;
+        Email = email;
+        this.phonenumber = phonenumber;
+        this.dob = dob;
+        this.username = username;
     }
 
     public int getId() {
@@ -105,5 +118,21 @@ public class userDTO{
 
     public void setComfirmPassword(String comfirmPassword) {
         this.comfirmPassword = comfirmPassword;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
+    }
+
+    public String getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(String totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }

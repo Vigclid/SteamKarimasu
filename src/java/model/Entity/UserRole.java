@@ -36,8 +36,9 @@ public class UserRole {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public int setRoleId(int roleId) {
         this.roleId = roleId;
+        return roleId;
     }
 
     // Phương thức để hiển thị thông tin đối tượng UserRole
