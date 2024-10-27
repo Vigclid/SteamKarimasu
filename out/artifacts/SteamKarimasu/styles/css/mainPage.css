@@ -2,7 +2,7 @@ body{
     background-color: rgb(28, 25, 25) !important;
 }
 .khoang_cach{
- 
+
 }
 
 .top-game{
@@ -55,6 +55,13 @@ body{
     margin-bottom: 4px;
     width: 240px;
     height: 144.15px;
+
+}
+
+.img-items img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
 }
 .trending-more-infor-items{
     display: flex;
@@ -78,7 +85,7 @@ body{
     color: white;
 }
 .date{
-    
+
 }
 .more-infor{
 
@@ -86,7 +93,7 @@ body{
 .item-price{
     display: flex;
     flex-direction: column;
-    
+
 }
 .item-price a{
     text-decoration: none;
@@ -128,7 +135,7 @@ body{
     color: white;
     text-decoration: none;
     font-size: 30px;
-    
+
 }
 
 .featurated-game-items{
@@ -212,7 +219,7 @@ body{
     display: flex;
     justify-content: space-between;
     margin-left: 190px;
-    
+
 }
 #leader-board h1{
     color: white;
@@ -250,7 +257,7 @@ body{
 }
 
 #leader-board .name-card{
-    
+
     font-size: 25px;
     font-weight: bold;
 }

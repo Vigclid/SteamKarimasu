@@ -12,14 +12,23 @@
 
 .side-bar-button{
     transform: scale(0.8);
-    background: none;      
-    border: none;         
-    padding: 0;            
-    margin: 0;            
-    outline: none;         
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
     box-shadow: none;
     background-color: rgb(54, 51, 51);
     z-index: 1001;
+    transition: 0.5s ease;
+}
+
+.side-bar-button{
+
+}
+
+.rotated {
+    transform: rotate(180deg) scale(0.8);
 }
 
 .side-bar{
@@ -34,20 +43,6 @@
     padding-top: 60px;
 }
 
-.close-side-bar{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 1.5rem;
-    color: rgb(116, 186, 21);
-    text-decoration: none;
-    transition: 0.6s ease;
-    width: 40px;
-    height: 40px;
-}
 
 .close-side-bar:hover{
     background-color: #575757;
@@ -65,6 +60,10 @@
 
 .icon-nav-page{
     margin-left: 300px;
+}
+
+.icon-nav-page img{
+
 }
 
 .nav-search-join{
@@ -94,6 +93,13 @@
     width: 90px;
     color: white;
     background-color: rgb(116, 186, 21);
+    transition: 0.6s ease;
+}
+
+.navbar-join-us input:hover{
+    background-color: rgb(136, 217, 23);
+    border: solid rgb(136, 217, 23);
+    transform: scale(1.05);
 }
 
 .side-bar-items{
@@ -109,4 +115,10 @@
     text-decoration: none;
     color: white;
     font-size: 20px;
+    transition: 0.5s ease;
+}
+
+.side-bar-items a:hover{
+    text-decoration: underline;
+    transform: scale(1.08);
 }
