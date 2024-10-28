@@ -100,7 +100,7 @@ public class LoginServlet extends HttpServlet {
         int check = new LoginDAO().LoginCheck(username,password);
         if (check == 0) {
             request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
             // Tạo session cho người dùng
             HttpSession session = request.getSession();

@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +20,9 @@
 </script>
 <link rel="stylesheet" href="styles/css/mainPage.css">
 <jsp:include page="includes/navBarPage.jsp" />
-
 <body>
 <div class="khoang-cach"> k </div>
-
 <jsp:include page="includes/mainTopPage.jsp" />
-
-
 <div class="container top-game">
     <div class="row">
 
@@ -97,14 +92,14 @@
                 <div class="trending-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">Black Myth: Wukong</a>
+                        <div class="date">2023-08-10</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$5.99</a>
-                        <a href="" class="trending-for-rent">$1.99</a>
+                        <a href="" class="trending-for-buy">$49.99</a>
+                        <a href="" class="trending-for-rent">$5.99</a>
                     </div>
 
                 </div>
@@ -114,19 +109,19 @@
             <div class="trending-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/Brawlhalla.jpg" alt="">
                 </div>
 
                 <div class="trending-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
-                        <div class="more-infor">10 bought 5 retend</div>
+                        <a href="" class="items-name">Brawlhalla</a>
+                        <div class="date">2023-09-05</div>
+                        <div class="more-infor">11 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$5.99</a>
+                        <a href="" class="trending-for-buy">Free</a>
                         <a href="" class="trending-for-rent">$1.99</a>
                     </div>
 
@@ -138,20 +133,20 @@
             <div class="trending-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/Sekiro.jpg" alt="">
                 </div>
 
                 <div class="trending-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">Sekiro</a>
+                        <div class="date">2023-07-20</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$5.99</a>
-                        <a href="" class="trending-for-rent">$1.99</a>
+                        <a href="" class="trending-for-buy">$59.99</a>
+                        <a href="" class="trending-for-rent">$7.99</a>
                     </div>
 
                 </div>
@@ -162,20 +157,20 @@
             <div class="trending-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/PUBG.jpg">
                 </div>
 
                 <div class="trending-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">PUBG</a>
+                        <div class="date">2023-08-25</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$5.99</a>
-                        <a href="" class="trending-for-rent">$1.99</a>
+                        <a href="" class="trending-for-buy">$29.99</a>
+                        <a href="" class="trending-for-rent">$4.99</a>
                     </div>
 
                 </div>
@@ -186,20 +181,20 @@
             <div class="trending-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/Luffy.jpg" alt="">
                 </div>
 
                 <div class="trending-more-infor-items">
 
-                    <div class="inffeaturated-or-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                    <div class="infor-items">
+                        <a href="" class="items-name">Luffy Online</a>
+                        <div class="date">2023-06-15</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$5.99</a>
-                        <a href="" class="trending-for-rent">$1.99</a>
+                        <a href="" class="trending-for-buy">$39.99</a>
+                        <a href="" class="trending-for-rent">$4.99</a>
                     </div>
 
                 </div>
@@ -220,19 +215,19 @@
             <div class="featurated-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/JapaneseBook.jpg" alt="">
                 </div>
 
                 <div class="featurated-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
-                        <div class="more-infor">10 bought 5 retend</div>
+                        <a href="" class="items-name">Japanese Book</a>
+                        <div class="date">2023-09-01</div>
+                        <div class="more-infor">6 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$5.99</a>
+                        <a href="" class="featurated-for-buy">$19.99</a>
                         <a href="" class="featurated-for-rent">$1.99</a>
                     </div>
 
@@ -243,20 +238,20 @@
             <div class="featurated-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/Headphones.jpg" alt="">
                 </div>
 
                 <div class="featurated-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">Headphones Testing</a>
+                        <div class="date">2023-07-11</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$5.99</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
+                        <a href="" class="featurated-for-buy">$99.99</a>
+                        <a href="" class="featurated-for-rent">$10.99</a>
                     </div>
 
                 </div>
@@ -267,43 +262,19 @@
             <div class="featurated-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/WearingSimulator.jpg" alt="">
                 </div>
 
                 <div class="featurated-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">Wearing Simulator</a>
+                        <div class="date">2023-08-18</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$5.99</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="featurated-game-items">
-
-                <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
-                </div>
-
-                <div class="featurated-more-infor-items">
-
-                    <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
-                        <div class="more-infor">10 bought 5 retend</div>
-                    </div>
-
-                    <div class="item-price">
-                        <a href="" class="featurated-for-buy">$5.99</a>
+                        <a href="" class="featurated-for-buy">$19.99</a>
                         <a href="" class="featurated-for-rent">$1.99</a>
                     </div>
 
@@ -315,19 +286,43 @@
             <div class="featurated-game-items">
 
                 <div class="img-items">
-                    <img src="assets/img/blank.png" alt="">
+                    <img src="assets/images_product/Paladin.jpg" alt="">
                 </div>
 
                 <div class="featurated-more-infor-items">
 
                     <div class="infor-items">
-                        <a href="" class="items-name">Name</a>
-                        <div class="date">Date</div>
+                        <a href="" class="items-name">Paladin</a>
+                        <div class="date">2023-08-02</div>
                         <div class="more-infor">10 bought 5 retend</div>
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$5.99</a>
+                        <a href="" class="featurated-for-buy">Free</a>
+                        <a href="" class="featurated-for-rent">$1.99</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="featurated-game-items">
+
+                <div class="img-items">
+                    <img src="assets/images_product/basketball.jpg" alt="">
+                </div>
+
+                <div class="featurated-more-infor-items">
+
+                    <div class="infor-items">
+                        <a href="" class="items-name">Basketball</a>
+                        <div class="date">2023-09-15</div>
+                        <div class="more-infor">10 bought 5 retend</div>
+                    </div>
+
+                    <div class="item-price">
+                        <a href="" class="featurated-for-buy">$14.99</a>
                         <a href="" class="featurated-for-rent">$1.99</a>
                     </div>
 

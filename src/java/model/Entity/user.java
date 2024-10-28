@@ -9,6 +9,8 @@ public class user {
     private String password;
     private String phoneNumber;
 
+    private float totalAmount;
+
     // Constructor không tham số
     public user() {}
 
@@ -78,6 +80,18 @@ public class user {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public byte getActive() {
+        return active;
+    }
+
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     // Phương thức để hiển thị thông tin đối tượng User
