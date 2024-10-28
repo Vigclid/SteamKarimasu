@@ -1,3 +1,4 @@
+
 package repository.impl;
 
 import Converter.userConverter;
@@ -15,20 +16,20 @@ public class userRepositoryimpl implements userRepository {
     @Override
     public void Register(userDTO userdto) {
 
-        String sql = "INSERT INTO [dbo].[Users] (Username, email, Dob,Active, Pass, phonenumber) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO master.users (Username, email, Dob,Active, Pass, phonenumber) VALUES (?, ?, ?, ?, ?, ?)";
         userConverter converter = new userConverter();
         user user = converter.convertUserDTOtoUserEntity(userdto);
         try {
             ConnectDB db = new ConnectDB();
             Connection con = db.openConnecion();
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getEmail() );
             preparedStatement.setString(3, user.getDob());
             preparedStatement.setInt(4, user.isActive());
             preparedStatement.setString(5, user.getPassword());
             preparedStatement.setString(6, user.getPhoneNumber());
+            preparedStatement.executeUpdate();
 
             try (ResultSet rs = preparedStatement.getGeneratedKeys()) {
                 if (rs.next()) {
@@ -36,50 +37,27 @@ public class userRepositoryimpl implements userRepository {
                 }
             }
 
-            addUserRole(user);
-
-            preparedStatement.execute();
+            UserRoleRepositoryImpl userRoleRepository = new UserRoleRepositoryImpl();
+            userRoleRepository.addUserRole(user);
             preparedStatement.close();
             con.close();
         } catch (SQLException e) {
-            // Kiểm tra SQLState để bắt lỗi RAISERROR từ SQL Server (mã lỗi 50000)
-            if (e.getErrorCode() == 50000) {
+            if (e.getSQLState().equals("45000")) {
                 System.out.println("Trigger đã phát hiện trùng lặp username.");
             } else {
                 e.printStackTrace();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
 
     }
-    public void addUserRole(user user) {
-        String sql = "INSERT INTO Userrole(Userid,Roleid) VALUES (?,?) ";
 
-        try {
-            ConnectDB db = new ConnectDB();
-            Connection con = db.openConnecion();
-            PreparedStatement stmt = con.prepareStatement(sql);
-
-            stmt.setInt(1, user.getUserId());
-            stmt.setInt(2, 2); // Assuming roleId 2 corresponds to 'USER' role in the database
-
-            stmt.executeUpdate();
-            stmt.close();
-            con.close();
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-@Override
+    @Override
     public List<user> getAllUsers()  {
         List<user> users = new ArrayList<>();
-        String sql = "SELECT * From [dbo].[Users]";
+        String sql = "SELECT * From master.users";
         Connection con = null;
         try {
             ConnectDB db = new ConnectDB();
@@ -118,6 +96,95 @@ public class userRepositoryimpl implements userRepository {
             }
         }
         return users;
+    }
+
+    @Override
+    public int findIdProductByName(String name)  {
+        try {
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            String sql = "SELECT Productid FROM product WHERE Productname LIKE '%" + name + "%'";
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, name);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("Productid");
+            }
+            preparedStatement.close();
+            con.close();
+            rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
+    }
+
+    public byte LoginCheck(String username, String password){
+        String sql = "SELECT * FROM users WHERE Username LIKE  ? AND Pass LIKE ?";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%"+username+"%");
+            stmt.setString(2, "%"+password+"%");
+            ResultSet rs = stmt.executeQuery();
+            int Tempid = 0;
+            Boolean success = false;
+            if (rs.next()){
+                Tempid = rs.getInt(1);
+                if (rs.getByte(5) != 0)    success = true;
+            }
+            if (success) {
+                sql = "SELECT ur.Roleid FROM userrole ur WHERE Userid =?";
+                stmt = con.prepareStatement(sql);
+                stmt.setInt(1, Tempid);
+                rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    int roleid = rs.getInt(1);
+                    if (roleid == 1) {
+                        return 1;
+                    } else  return 2;
+                }
+            } else return 0;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+        return 0;
+
+    }
+
+    public user findUserbyName(String name) {
+        user user = new user();
+        String sql = "SELECT * FROM [dbo].[Users] WHERE Username like ? ";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%"+name+"%");
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                user.setUserId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setDob(rs.getString(4));
+                user.setActive(rs.getByte(5));
+                user.setPassword(rs.getString(6));
+                user.setPhoneNumber(rs.getString(7));
+                user.setTotalAmount(rs.getFloat(8));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
 

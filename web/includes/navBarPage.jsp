@@ -47,10 +47,10 @@
                 <input type="text" name="search" placeholder="Search">
             </div>
 
-            <div class="navbar-join-us">\
-                <form action="${pageContext.request.contextPath}/login.jsp">
-                    <input type="submit" name="join-us" value="Join Us">
-                </form>
+            <div class="navbar-join-us">
+                <a href="${pageContext.request.contextPath}/login.jsp" class="button">Join Us</a>
+            </div>
+                <a href="${pageContext.request.contextPath}/profilePage.jsp"> qua </a>
             </div>
 
         </div>

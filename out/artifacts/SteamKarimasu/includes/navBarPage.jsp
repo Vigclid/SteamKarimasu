@@ -48,7 +48,9 @@
             </div>
 
             <div class="navbar-join-us">
-                <input type="submit" name="join-us" value="Join Us">
+                <a href="${pageContext.request.contextPath}/login.jsp" class="button">Join Us</a>
+            </div>
+                <a href="${pageContext.request.contextPath}/profilePage.jsp"> qua </a>
             </div>
 
         </div>
