@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,11 +53,12 @@
 <%--            <div class="navbar-join-us" >--%>
 <%--                <input type="submit" name="join-us" value="Join Us" onclick="location.href='../login.jsp'">--%>
 <%--            </div>--%>
-            <>
-            <>
+
             <div class="navbar-join-us">
                 <a href="/StudentManagement_Web_exploded/login.jsp" class="button">Join Us</a>
             </div>
+
+            <a href="http://localhost:5000/StudentManagement_Web_exploded/profilePage.jsp" > INFORMATION </a>
 
         </div>
         </form>

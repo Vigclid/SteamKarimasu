@@ -122,9 +122,14 @@ body{
 .navCard{
     border-radius: 15px;
     background-color: rgba(255, 166, 0, 0.371);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#navCardLogin{
+    display : flex;
 }
 
 .login{

@@ -160,5 +160,30 @@ public class userRepositoryimpl implements userRepository {
 
     }
 
+    public User findUserbyName(String name) {
+        User user = new User();
+        String sql = "SELECT * FROM master.users WHERE Username LIKE '%" + name + "%'";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                user.setUserid(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setDob(rs.getString(4));
+                user.setActive(rs.getByte(5));
+                user.setPass(rs.getString(6));
+                user.setPhonenumber(rs.getString(7));
+                user.setTotalAmount(rs.getFloat(8));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
 
 }

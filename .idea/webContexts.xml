@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/web/includes/navBarPage.jsp" value="file://$PROJECT_DIR$/web/includes" />
+        <entry key="file://$PROJECT_DIR$/web/profilePage.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/registerPage.html" value="file://$PROJECT_DIR$/web" />
       </map>
     </option>

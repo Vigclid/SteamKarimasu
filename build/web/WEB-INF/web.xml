@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-    <servlet>
+    <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+<servlet>
         <servlet-name>UserRegister</servlet-name>
         <servlet-class>controller.UserRegister</servlet-class>
         <init-param>
@@ -12,6 +15,23 @@
         <servlet-name>UserRegister</servlet-name>
         <url-pattern>/UserRegister</url-pattern>
     </servlet-mapping>
+    <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+<!--    <servlet>-->
+<!--    <servlet-name>LogoutServler</servlet-name>-->
+<!--    <servlet-class>controller.LogoutServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--    <servlet-name>LogoutServler</servlet-name>-->
+<!--    <url-pattern>/LogoutServler</url-pattern>-->
+<!--    </servlet-mapping>-->
     <error-page>
         <error-code>404</error-code>
         <location>/</location>

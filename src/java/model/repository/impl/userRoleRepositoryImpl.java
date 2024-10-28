@@ -32,10 +32,11 @@ public class userRoleRepositoryImpl implements userRoleRepository {
         }
     }
 
+
     @Override
     public int findRoleIdbyUserId(int userId) {
         UserRole userRole = new UserRole();
-        String sql = "SELECT u.Roleid FROM userrole u WHERE u.Userid = " + userId;
+        String sql = "SELECT * FROM userrole u WHERE u.Userid = " + userId;
         int roleId = 0;
         try {
             ConnectDB db = new ConnectDB();

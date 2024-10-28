@@ -1,4 +1,8 @@
-<%@ page import="model.Entity.User" %><%--
+<%@ page import="model.Entity.User" %>
+<%@ page import="model.repository.impl.userRepositoryimpl" %>
+<%@ page import="model.repository.impl.userRoleRepositoryImpl" %>>
+<%@ page import="model.repository.impl.roleRepositoryImpl" %>>
+<%--
     Document   : profilePage
     Created on : Oct 25, 2024, 8:09:29 PM
     Author     : Admin
@@ -14,7 +18,7 @@
         <link rel="stylesheet" href="css/profilePage.css">
         <base href="/web/">      
     </head>
-<%--    <jsp:include page="" />--%>
+    <jsp:include page="includes/navBarPage.jsp" />
     <body>
     
     <div id="profilePage" class="container profilePage">
@@ -22,24 +26,35 @@
         <div class="row profile">
 
             <div class="col-3 user-img">
-                <img src="assets/img_profile_page/Blank_Rectangle.png" alt="">
+                <img src="assets/img/black-myth-wukong.png" alt="">
             </div>
             <div class="col-9 user-infor">
                 <table>
+                    <% HttpSession httpSession = request.getSession(false);
+                    if (httpSession != null) {
+                        userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();
+                        roleRepositoryImpl roleRepository = new roleRepositoryImpl();
+                        Object userName = httpSession.getAttribute("username");
+                        userRepositoryimpl repositoryimpl = new userRepositoryimpl();
+                        User user = repositoryimpl.findUserbyName((String) userName);
+                        int userRole = userRoleRepository.findRoleIdbyUserId(user.getUserid());
+                        String roleName = roleRepository.findRoleById(userRole);
+
+                    %>
                     <tbody>
                         <tr class="name">
-                            <td style="padding-right: 30px;">Name: </td>
-                            <td></td>
+                            <td>Name: </td>
+                            <td><%= user.getUsername() %></td>
                         </tr>
 
                         <tr class="role">
                             <td>Role: </td>
-                            <td></td>
+                            <td><%= roleName %></td>
                         </tr>
 
                         <tr class="kcoins">
                             <td>Kcoins: </td>
-                            <td></td>
+                            <td> <%= user.getTotalAmount()%> </td>
                         </tr>
                     </tbody>
                 </table>
@@ -68,19 +83,19 @@
 
                     <div class="user-email">
                         <div class="email">Email</div>
-                        <input class="input-email" type="text" value="" readonly>
+                        <input class="input-email" type="text" value="<%=user.getEmail() %>" readonly>
                     </div>
 
                     <div class="user-phone">
                         <div class="email">Phone Number</div>
-                        <input class="input-phone" type="text" value="" readonly>
+                        <input class="input-phone" type="text" value="<%=user.getPhonenumber()%>" readonly>
                     </div>
 
                     <div class="user-date">
                         <div class="date">Date</div>
-                        <input class="input-date" type="text" value="" readonly>
+                        <input class="input-date" type="text" value="<%=user.getDob()%>" readonly>
                     </div>
-
+                    <%}%>
                 </div>
 
             </div>
@@ -90,5 +105,5 @@
     </div>
 
 </body>
-<%--<jsp:include page="mainFooterPage.jsp" />--%>
+<jsp:include page="includes/mainFooterPage.jsp" />
 </html>

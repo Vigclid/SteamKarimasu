@@ -52,11 +52,20 @@ body{
     display: flex;
     justify-content: center;
 }
-.date input{
+.date select{
+    cursor: pointer;
     border: solid white;
     border-radius: 10px;
     width: 116.5px;
     height: 45px;
+    transition: 0.6s ease;
+    border: solid white;
+}
+
+.date select:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .day{
     margin: 0 10px;
@@ -113,9 +122,14 @@ body{
 .navCard{
     border-radius: 15px;
     background-color: rgba(255, 166, 0, 0.371);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#navCardLogin{
+    display : flex;
 }
 
 .login{

@@ -2,5 +2,5 @@ package model.repository;
 
 public interface roleRepository {
 
-    void findRoleById(int id);
+    String findRoleById(int id);
 }

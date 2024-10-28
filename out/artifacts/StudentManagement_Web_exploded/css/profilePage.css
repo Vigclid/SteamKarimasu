@@ -16,7 +16,7 @@ body{
     width: 100%;
 }
 
-#profilePage .user-infor{
+#profilePage .col-3user-infor{
     color: white;
     line-height: 60px;
 }

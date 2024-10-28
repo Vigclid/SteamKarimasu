@@ -43,8 +43,8 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="bootstrap" level="application" />
-    <orderEntry type="library" name="jstl-1.2" level="project" />
     <orderEntry type="library" name="ojdbc11" level="project" />
     <orderEntry type="library" name="mysql-connector-j-9.0.0" level="project" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
   </component>
 </module>

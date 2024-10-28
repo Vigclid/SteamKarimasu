@@ -13,34 +13,37 @@
     <link rel="stylesheet" href="css/registerPage.css">
 </head>
 <body>
-<form action="UserRegister" class="" method="POST">
+
 
     <div class="container baseCard">
         <div class="row">
             <div class="col navCard">
-                <div class="logo_nav">
-                    <img src="assets/img/smallogo.png" alt="">
+                <form action="LoginServlet" method="POST" id="navCardLogin">
+                    <div class="logo_nav">
+                        <img src="assets/img/smallogo.png" alt="">
 
-                    <div>2Knights</div>
-                </div>
-
-                <div class="login">
-                    <div class="inputUP">
-                        <label for="username" class=""></label>
-                        <input type="text" name="username_header" id="username" placeholder="Email Or Username">
+                        <div>2Knights</div>
                     </div>
 
-                    <div class="inputUP">
-                        <label for="password" class=""></label>
-                        <input type="password" class="" name="password_header" placeholder="Password" id="password">
-                    </div>
+                    <div class="login">
+                        <div class="inputUP">
+                            <label for="username" class=""></label>
+                            <input type="text" name="username" id="username" placeholder="Email Or Username">
+                        </div>
 
-                    <input type="submit" class="login_card" value="Login">
-                </div>
+                        <div class="inputUP">
+                            <label for="password" class=""></label>
+                            <input type="password" class="" name="password" placeholder="Password" id="password">
+                        </div>
+
+                        <input type="submit" class="login_card" value="Login">
+                    </div>
+                </form>
             </div>
 
 
             <div class="col registerCard">
+                <form action="UserRegister" class="" method="POST">
                 <div class="titleRegister">
                     <h1>Register</h1>
                 </div>
@@ -124,8 +127,7 @@
                 </div>
 
                 <input type="submit" class="Create" value="Create Accout">
-
-
+                </form>
             </div>
 
 
@@ -138,7 +140,6 @@
         </div>
     </div>
 
-</form>
 
 </body>
 </html>
