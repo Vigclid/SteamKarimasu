@@ -1,0 +1,170 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#categoryPage{
+    margin-top: 140px;
+    margin-bottom: 50px;
+}
+
+#categoryPage .category-sort{
+    display: flex;
+    justify-content: space-between;
+}
+
+#categoryPage .category-sort .col-3{
+    padding: 0;
+}
+
+#categoryPage .all-category{
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    padding-left: 0;
+}
+
+#categoryPage .sort-by{
+    display: flex;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-left: 200px;
+    padding-right: 0;
+}
+#categoryPage .sort-by div{
+    margin-top: 12px;
+    margin-left: 10px;
+    font-size: 20px;
+    margin-right: 0;
+}
+
+#categoryPage .sort-by-table {
+    height: 0;
+    width: 300px;
+    position: absolute;
+    top: 30%; /* Để nó xuất hiện ngay dưới nút */
+    background-color: #333;
+    overflow: hidden;
+    transition: 0.5s ease;
+    right: 2%;
+    border-radius: 20px;
+    
+   
+}
+
+#categoryPage .sort-by-table.active {
+    height: 300px; /* Chiều cao mong muốn khi mở rộng */
+    border: 0.1px solid rgb(116, 186, 21);
+}
+
+#categoryPage .sort-by-items{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#categoryPage .sort-by-items input{
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+    text-align: left;
+    width: 200px;
+    margin-left: 50px;
+    transition: 0.5s ease;
+}
+
+#categoryPage .sort-by-items input:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+#categoryPage .arrow {
+    display: inline-block;
+    transition: 0.4s ease;
+}
+
+#categoryPage .arrow.rotated {
+    transform: rotate(90deg); 
+}
+
+
+#categoryPage .table-game{
+
+}
+
+#categoryPage .table-game tr{
+    display: flex;
+    justify-content: left;
+}
+
+#categoryPage .table-game td{
+    margin-right: 28px;
+}
+
+#categoryPage .table-game-items{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 240px;
+    height: 192px;
+}
+#categoryPage .img-items{
+    margin-bottom: 4px;
+    width: 240px;
+    height: 144.15px;
+    
+}
+
+#categoryPage .img-items img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+#categoryPage .table-more-infor-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+#categoryPage .infor-items div{
+    color: white;
+    font-size: 10px;
+    font-weight: 10;
+}
+
+
+#categoryPage .items-name{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+#categoryPage .date{
+    
+}
+#categoryPage .more-infor{
+
+}
+#categoryPage .item-price{
+    display: flex;
+    flex-direction: column;
+    
+}
+#categoryPage .item-price a{
+    text-decoration: none;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 12px;
+}
+#categoryPage .table-game-for-buy{
+    background-color: rgb(225, 75, 11);
+    margin-bottom: 5px;
+    width: 80px;
+}
+#categoryPage .table-game-for-rent{
+    background-color: rgb(116, 186, 21);
+    width: 50px;
+    margin-left: 30px;
+}

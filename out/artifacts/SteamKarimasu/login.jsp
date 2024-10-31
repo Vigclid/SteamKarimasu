@@ -86,12 +86,7 @@
 
                 <div class="Continue_Item">
 
-                    <a  href="https://accounts.google.com/o/oauth2/auth?scope=email%20profile%20openid
-                                &redirect_uri=http://localhost:5000/StudentManagement_Web_exploded/LoginServlet
-                                &response_type=code
-                                &client_id=638003678670-95tt4o7buj11j1aplsf1h8m4vl23jsse.apps.googleusercontent.com
-                                &approval_prompt=force
-                                ">
+                    <a  href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:5000/StudentManagement/LoginServlet&response_type=code&client_id=638003678670-m3pccq5p9jbok6nco3j7erdku1crfu2s.apps.googleusercontent.com&approval_prompt=force">
                         <div class="ortherLogin">
                             <img src="assets/img/GoogleLogo.png" alt="">
                         </div>
