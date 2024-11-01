@@ -1,7 +1,10 @@
 <%@ page import="model.Entity.User" %>
 <%@ page import="model.repository.impl.userRepositoryimpl" %>
 <%@ page import="model.repository.impl.userRoleRepositoryImpl" %>>
-<%@ page import="model.repository.impl.roleRepositoryImpl" %>>
+<%@ page import="model.repository.impl.roleRepositoryImpl" %>
+<%@ page import="common.LoginSession" %>
+<%@ page import="static db.DatabaseInfo.user" %>
+>
 <%--
     Document   : profilePage
     Created on : Oct 25, 2024, 8:09:29 PM
@@ -30,20 +33,16 @@
             </div>
             <div class="col-9 user-infor">
                 <table>
-                    <% HttpSession httpSession = request.getSession(false);
-                    if (httpSession != null) {
+                    <%
                         userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();
                         roleRepositoryImpl roleRepository = new roleRepositoryImpl();
-                        Object userName = httpSession.getAttribute("username");
-                        userRepositoryimpl repositoryimpl = new userRepositoryimpl();
-                        User user = repositoryimpl.findUserbyName((String) userName);
+                        User user = new LoginSession().getLoginSession(request);
                         int userRole = userRoleRepository.findRoleIdbyUserId(user.getUserid());
                         String roleName = roleRepository.findRoleById(userRole);
-
                     %>
                     <tbody>
                         <tr class="name">
-                            <td>Name: </td>
+                            <td style="padding-right: 30px;">Name: </td>
                             <td><%= user.getUsername() %></td>
                         </tr>
 
@@ -68,11 +67,11 @@
             <div class="col-3 user-contact">
 
                 <div class="main-information">
-                    <input type="submit" value="Main Information" class="" id="" name="">
+                    <a class="input-profile" href="${pageContext.request.contextPath}/profilePage.jsp"> Main Information</a>
                 </div>
     
                 <div class="change-password">
-                    <input type="submit" value="Change Password" class="" id="" name="">
+                    <a class="input-changePass" href="${pageContext.request.contextPath}/changePassPage.jsp"> Change Password </a>
                 </div>
 
             </div>
@@ -83,19 +82,19 @@
 
                     <div class="user-email">
                         <div class="email">Email</div>
-                        <input class="input-email" type="text" value="<%=user.getEmail() %>" readonly>
+                        <input class="input" type="text" value="<%=user.getEmail() %>" readonly>
                     </div>
 
                     <div class="user-phone">
                         <div class="email">Phone Number</div>
-                        <input class="input-phone" type="text" value="<%=user.getPhonenumber()%>" readonly>
+                        <input class="input" type="text" value="<%=user.getPhonenumber()%>" readonly>
                     </div>
 
                     <div class="user-date">
                         <div class="date">Date</div>
-                        <input class="input-date" type="text" value="<%=user.getDob()%>" readonly>
+                        <input class="input" type="text" value="<%=user.getDob()%>" readonly>
                     </div>
-                    <%}%>
+
                 </div>
 
             </div>

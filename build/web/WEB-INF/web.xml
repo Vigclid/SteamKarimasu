@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
-<servlet>
+    <servlet>
         <servlet-name>UserRegister</servlet-name>
         <servlet-class>controller.UserRegister</servlet-class>
         <init-param>
@@ -16,22 +16,32 @@
         <url-pattern>/UserRegister</url-pattern>
     </servlet-mapping>
     <servlet>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>controller.LoginServlet</servlet-class>
-
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
-<!--    <servlet>-->
-<!--    <servlet-name>LogoutServler</servlet-name>-->
-<!--    <servlet-class>controller.LogoutServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--    <servlet-name>LogoutServler</servlet-name>-->
-<!--    <url-pattern>/LogoutServler</url-pattern>-->
-<!--    </servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>ChangePass</servlet-name>
+        <servlet-class>controller.ChangePass</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangePass</servlet-name>
+        <url-pattern>/ChangePass</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddGame</servlet-name>
+        <servlet-class>controller.AddGame</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddGame</servlet-name>
+        <url-pattern>/AddGame</url-pattern>
+    </servlet-mapping>
+
     <error-page>
         <error-code>404</error-code>
         <location>/</location>

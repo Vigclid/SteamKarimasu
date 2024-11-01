@@ -1,4 +1,7 @@
-<%-- 
+<%@ page import="model.Entity.User" %>
+<%@ page import="common.LoginSession" %>
+<%@ page import="model.repository.impl.roleRepositoryImpl" %>
+<%@ page import="model.repository.impl.userRoleRepositoryImpl" %><%--
     Document   : changePassPage
     Created on : Oct 25, 2024, 9:00:25 PM
     Author     : Admin
@@ -14,9 +17,9 @@
 <%--    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">--%>
     <link rel="stylesheet" href="css/changePassPage.css">
 </head>
-<jsp:include page="" />
+<jsp:include page="includes/navBarPage.jsp" />
 <body>
-    
+    <form action="ChangePass" method="post">
     <div id="changePassPage" class="container changePassPage">
 
         <div class="row profile">
@@ -27,20 +30,27 @@
 
             <div class="col-9 user-infor">
                 <table>
+                    <%
+                        userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();
+                        roleRepositoryImpl roleRepository = new roleRepositoryImpl();
+                        User user = new LoginSession().getLoginSession(request);
+                        int userRole = userRoleRepository.findRoleIdbyUserId(user.getUserid());
+                        String roleName = roleRepository.findRoleById(userRole);
+                    %>
                     <tbody>
                         <tr class="name">
                             <td style="padding-right: 30px;">Name: </td>
-                            <td>User123</td>
+                            <td><%= user.getUsername()%></td>
                         </tr>
 
                         <tr class="role">
                             <td>Role: </td>
-                            <td>Pussy Slayer</td>
+                            <td><%= roleName%></td>
                         </tr>
 
                         <tr class="kcoins">
                             <td>Kcoins: </td>
-                            <td>999.99</td>
+                            <td><%= user.getTotalAmount()%></td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,11 +64,11 @@
             <div class="col-3 user-contact">
 
                 <div class="main-information">
-                    <input type="submit" value="Main Information" class="" id="" name="">
+                    <a class="input-profile" href="${pageContext.request.contextPath}/profilePage.jsp" style="color: white; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;"> Main Information</a>
                 </div>
     
                 <div class="change-password">
-                    <input type="submit" value="Change Password" class="" id="" name="">
+                    <a class="input-changePass" href="${pageContext.request.contextPath}/changePassPage.jsp" style="color: rgb(109, 174, 21);; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;"> Change Password </a>
                 </div>
 
             </div>
@@ -69,27 +79,26 @@
 
                     <div class="user-old-password">
                         <div class="old-password">Old Password</div>
-                        <input class="input-old-password" type="text" value="">
+                        <input class="input-old-password" type="password" style="color: white;"value="" name="old-password">
                     </div>
 
                     <div class="user-confirm-password">
                         <div class="confirm-password">Confirm Password</div>
-                        <input class="input-comfirm-password" type="text" value="">
+                        <input class="input-comfirm-password" type="password" style="color: white;"value="", name="new-password">
                     </div>
 
                     <div class="user-new-password">
                         <div class="new-password">New Password</div>
-                        <input class="input-new-password" type="text" value="">
+                        <input class="input-new-password" type="password" style="color: white;" value="" name="confirm-password">
                     </div>
 
                 </div>
-
             </div>
-
+                <input id="conform-button" type="submit" value="CONFIRM">
         </div>
 
     </div>
-
+    </form>
 </body>
-<%--<jsp:include page="mainFooterPage.jsp" />--%>
+<jsp:include page="includes/mainFooterPage.jsp" />
 </html>

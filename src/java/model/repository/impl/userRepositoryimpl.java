@@ -98,27 +98,7 @@ public class userRepositoryimpl implements userRepository {
     }
 
     @Override
-    public int findIdProductByName(String name)  {
-        try {
-            ConnectDB db = new ConnectDB();
-            Connection con = db.openConnecion();
-            String sql = "SELECT Productid FROM product WHERE Productname LIKE '%" + name + "%'";
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setString(1, name);
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                return rs.getInt("Productid");
-            }
-            preparedStatement.close();
-            con.close();
-            rs.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return 0;
-    }
+
 
     public byte LoginCheck(String username, String password){
         String sql = "SELECT * FROM users WHERE Username LIKE  ? AND Pass LIKE ?";
@@ -185,5 +165,18 @@ public class userRepositoryimpl implements userRepository {
         return user;
     }
 
+    public void updateUserPassword(User user) {
+        String sql = " UPDATE users SET Pass =? WHERE Userid = " + user.getUserid();
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, user.getPass());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

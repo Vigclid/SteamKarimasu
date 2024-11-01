@@ -1,74 +1,129 @@
-<%--
+<%@ page import="common.LoginSession" %>
+<%@ page import="model.Entity.User" %><%--
     Document   : navBarPage
-    Created on : Oct 21, 2024, 12:08:59 PM
+    Created on : Oct 21, 2024, 12:08:59 PM
     Author     : Admin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE html>
 <html>
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/navBarPage.css">
 </head>
+<body>
+<div class="container-s navBarPage fixed-top">
+    <button id="side-bar-button" class="side-bar-button" onclick="toggleSidebar()">
+        <img src="${pageContext.request.contextPath}/assets/img/menuNav.png" alt="Menu">
+    </button>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <div class="side-bar" id="side-bar">
+        <div class="side-bar-items">
+            <a href="#">Home</a>
+            <a href="#">Category</a>
+            <a href="#">Buy</a>
+            <a href="#">Rent</a>
+        </div>
+    </div>
+
+    <div id="icon-nav-page">
+        <img src="${pageContext.request.contextPath}/assets/img/mainPageLogo.png" alt="Logo">
+        <a href="${pageContext.request.contextPath}/mainPage.jsp"></a>
+    </div>
+
+      <form action="" method="">
+        <div class="nav-search-join">
+            <div class="navbar-search">
+                <input type="text" name="search" placeholder="Search">
+            </div>
+            <!-- Conditionally rendered login button -->
+            <% User user = new LoginSession().getLoginSession(request);
+            if (user == null){
+
+            %>
+            <div class="navbar-join-us">
+                <a href="${pageContext.request.contextPath}/login.jsp" class="button">Join Us</a>
+            </div>
+            <%
+            } else {
+
+            %>
+            <button type="button" id="user-infor-button" class="user-infor-button" onclick="toggleUserInfor()">
+                <img src="${pageContext.request.contextPath}/assets/img/user-infor-button.png" alt="User Info">
+            </button>
+            <div id="user-infor-items" class="user-infor-items">
+                <div class="infor-items">
+                    <div class="row accout-infor">
+                        <div class="accout-img">
+                            <img src="${pageContext.request.contextPath}/assets/img/ARK.png" alt="User">
+                        </div>
+                        <div class="accout-name"><%= user.getUsername() %></div>
+                        <div class="accout-role"><%= new LoginSession().getRoleNameUser(request)%></div>
+                        <div class="accout-kcoins">
+                            <input class="kcoins" type="text" value="<%= user.getTotalAmount()%>" readonly>
+                        </div>
+                    </div>
+                    <div class="accout-feature">
+                        <div class="row feature">
+                            <div class="col-6">
+                                <a href="${pageContext.request.contextPath}/profilePage.jsp" class="button-link">Profile</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="yourDepositLink" class="button-link">Deposit</a>
+                            </div>
+                        </div>
+                        <div class="row feature">
+                            <div class="col-6">
+                                <a href="yourNewsLink" class="button-link">News</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="yourLogoutLink" class="button-link">LogOut</a>
+                            </div>
+                        </div>
+
+                        <div class="row feature">
+                            <div class="col-12 text-bg-danger">
+                                <a href="yourNewsLink" class="button-link">News</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <%
+                }
+
+            %>
+
+        </div>
+    </form>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navBarPage.css">
-<body>
-<div class="container-s navBar">
-    <button class="side-bar-button" onclick="toggleSidebar()">
-        <img src="${pageContext.request.contextPath}/assets/img/menuNav.png" alt="">
-    </button>
-
-    <div class="side-bar" id="side-bar">
-        <a class="close-side-bar" onclick="toggleSidebar()">x</a>
-        <div class="side-bar-items">
-            <a href="">Home</a>
-            <a href="">Category</a>
-            <a href="">Buy</a>
-            <a href="">Rent</a>
-        </div>
-    </div>
-
-
-    <div class="icon-nav-page">
-        <img src="${pageContext.request.contextPath}/assets/img/mainPageLogo.png" alt="">
-    </div>
-
-    <form action="" method="get">
-        <div class="nav-search-join">
-
-            <div class="navbar-search">
-                <input type="text" name="search" placeholder="Search">
-            </div>
-
-<%--            <div class="navbar-join-us" >--%>
-<%--                <input type="submit" name="join-us" value="Join Us" onclick="location.href='../login.jsp'">--%>
-<%--            </div>--%>
-
-            <div class="navbar-join-us">
-                <a href="/StudentManagement_Web_exploded/login.jsp" class="button">Join Us</a>
-            </div>
-
-            <a href="http://localhost:5000/StudentManagement_Web_exploded/profilePage.jsp" > INFORMATION </a>
-
-        </div>
-        </form>
-
-</div>
-
 <script>
     function toggleSidebar() {
         var sidebar = document.getElementById("side-bar");
-        sidebar.classList.toggle("active");
+        sidebar.classList.toggle("active-side-bar");
+    }
+
+    const button = document.getElementById('side-bar-button');
+    if (button) {
+        button.addEventListener('click', function () {
+            button.classList.toggle('rotated');
+        });
+    }
+
+    function toggleUserInfor() {
+        var userInfor = document.getElementById("user-infor-items");
+        userInfor.classList.toggle("active-user-infor");
     }
 </script>
 </body>

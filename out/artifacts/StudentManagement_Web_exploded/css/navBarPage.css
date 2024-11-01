@@ -1,7 +1,8 @@
-.navBar{
+.navBarPage {
     background-color: rgb(54, 51, 51);
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
     padding: 10px 30px;
     text-align: center;
     z-index: 1000; /* Đảm bảo navbar luôn ở trên */
@@ -10,7 +11,7 @@
     width: 100%;
 }
 
-.side-bar-button{
+.navBarPage .side-bar-button{
     transform: scale(0.8);
     background: none;
     border: none;
@@ -20,9 +21,15 @@
     box-shadow: none;
     background-color: rgb(54, 51, 51);
     z-index: 1001;
+    transition: 0.5s ease;
 }
 
-.side-bar{
+
+.navBarPage .rotated {
+    transform: rotate(180deg) scale(0.8);
+}
+
+.navBarPage .side-bar{
     height: 100%;
     width: 0;
     position: fixed;
@@ -34,67 +41,92 @@
     padding-top: 60px;
 }
 
-.close-side-bar{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 1.5rem;
-    color: rgb(116, 186, 21);
-    text-decoration: none;
-    transition: 0.6s ease;
-    width: 40px;
-    height: 40px;
-}
 
-.close-side-bar:hover{
-    background-color: #575757;
-}
 
-.side-bar.active {
+.navBarPage .side-bar.active-side-bar {
     width: 250px;
 }
 
-.navMenu{
+.navBarPage .navMenu{
     height: 30px;
     width: 30px;
     text-align: center;
 }
 
-.icon-nav-page{
-    margin-left: 300px;
+
+
+.navBarPage .icon-nav-page {
+    margin-left: 180px;
+    margin-top: 6px;
+    cursor: pointer;
 }
 
-.nav-search-join{
+.navBarPage .icon-nav-page img {
+}
+
+.navBarPage .nav-search-join{
     display: flex;
     height: 35px;
 }
 
-.nav-search-join input{
+.navBarPage .nav-search-join input{
     height: 40px;
 }
 
-.navbar-search input{
+.navBarPage .navbar-search input{
     border: solid rgb(112, 111, 111);
     border-radius: 20px;
     background-color: rgb(112, 111, 111);
-    margin-right: 30px
+    margin-right: 30px;
+    color: white;
 }
 
-.navbar-search input::placeholder{
+.navBarPage .navbar-search input:focus{
+    outline: none;
+}
+
+
+.navBarPage .navbar-search input::placeholder{
     color: rgb(166, 164, 164);
 }
 
-/*.navbar-join-us input{*/
-/*    border: solid rgb(116, 186, 21);*/
-/*    height: 38px;*/
-/*    border-radius: 20px;*/
-/*    width: 90px;*/
-/*    color: white;*/
-/*    background-color: rgb(116, 186, 21);*/
-/*}*/
+.navBarPage .navbar-join-us input{
+    border: solid rgb(116, 186, 21);
+    height: 38px;
+    border-radius: 20px;
+    width: 90px;
+    color: white;
+    background-color: rgb(116, 186, 21);
+    transition: 0.6s ease;
+}
+
+.navBarPage .navbar-join-us input:hover{
+    background-color: rgb(136, 217, 23);
+    border: solid rgb(136, 217, 23);
+    transform: scale(1.05);
+}
+
+.navBarPage .side-bar-items{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 35px;
+    line-height: 70px;
+}
+
+.navBarPage .side-bar-items a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s ease;
+}
+
+.navBarPage .side-bar-items a:hover{
+    text-decoration: underline;
+    transform: scale(1.08);
+}
+
 
 .navbar-join-us .button {
     display: inline-block;
@@ -105,19 +137,137 @@
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+
 }
 
-.side-bar-items{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 35px;
-    line-height: 70px;
+
+.navBarPage .user-infor-button {
+    transform: scale(0.8);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    background-color: rgb(54, 51, 51);
+    z-index: 1001;
+    transition: 0.5s ease;
 }
 
-.side-bar-items a{
-    text-decoration: none;
+
+
+.navBarPage #user-infor-items {
+    height: 500px;
+    width: 0; /* Ban đầu width là 0 */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s ease; /* Thêm transition cho width */
+    padding-top: 60px;
+}
+
+
+.navBarPage #user-infor-items.active-user-infor {
+    width: 365px; /* Khi có class active-user-infor, width mở rộng */
+}
+
+
+
+
+.navBarPage .accout-infor{
     color: white;
+}
+
+.navBarPage .accout-img{
+    width: 121px;
+    height: 121px;
+    border-radius: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin-left: 135px;
+    border: 1px solid rgb(116, 186, 21);
+}
+
+.navBarPage .accout-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.navBarPage .accout-name{
+    font-size: 30px;
+}
+
+.navBarPage .accout-role{
     font-size: 20px;
+}
+
+.navBarPage .accout-kcoins{
+
+}
+
+.navBarPage .accout-kcoins input{
+    background-color: rgb(28, 25, 25);
+    border-radius: 50px;
+    border: 1px solid rgb(116, 186, 21);
+    text-align: center;
+    color: rgb(116, 186, 21);
+    width: 186px;
+    height: 39px;
+    margin-bottom: 10px;
+}
+
+.navBarPage .accout-kcoins input:focus{
+    outline: none;
+}
+
+.navBarPage .feature input{
+    width: 135px;
+    height: 40px;
+    color: white;
+    background-color: rgb(65, 61, 61);
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 20px;
+    transition: 0.5s ease;
+}
+
+.navBarPage .feature input:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.navBarPage #manage{
+    justify-content: center;
+}
+
+.navBarPage #manage input{
+    color: white;
+    background-color: rgb(225, 75, 11);
+    transition: 0.5s ease;
+}
+
+.navBarPage #manage input:hover{
+    color: white;
+    background-color: rgb(247, 83, 12);
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(65, 61, 61);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    width: 135px;
+    margin: 20px 30px 0px 20px;
+    font-size: 15px
+}
+
+
+.button-link:hover {
+  border-color: rgb(116, 186, 21);;
 }

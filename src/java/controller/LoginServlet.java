@@ -87,6 +87,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset  =UTF-8");
+        PrintWriter out = response.getWriter();
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -101,8 +102,10 @@ public class LoginServlet extends HttpServlet {
 
         int check = new userRepositoryimpl().LoginCheck(username,password);
         if (check == 0) {
-            request.setAttribute("message", "Sai tên đăng nhập hoặc mật khẩu");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            out.println("<script>");
+            out.println("alert('Sai tên đăng nhập hoặc mật khẩu!');");
+            out.println("location='login.jsp';");
+            out.println("</script>");
         } else {
             // Tạo session cho người dùng
             HttpSession session = request.getSession();
@@ -120,6 +123,8 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("mainPage.jsp");
             }
         }
+
+
 
     }
 

@@ -6,17 +6,23 @@ public class Product {
     private String productImage;
     private String dateOfUpdate; // Sử dụng LocalDate nếu cần
     private String description;
+    private float price;
+    private String linkKeyGame;
+    private int userId;
+    private int typeProductId;
 
     // Constructor không tham số
     public Product() {}
 
     // Constructor có tham số
-    public Product(int productId, String productName, String productImage, String dateOfUpdate, String description) {
+    public Product(int productId, String productName, String productImage, String description, float price, String linkKeyGame) {
         this.productId = productId;
         this.productName = productName;
         this.productImage = productImage;
         this.dateOfUpdate = dateOfUpdate;
         this.description = description;
+        this.price = price;
+        this.linkKeyGame = linkKeyGame;
     }
 
     // Getter và Setter
@@ -58,6 +64,38 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getLinkKeyGame() {
+        return linkKeyGame;
+    }
+
+    public void setLinkKeyGame(String linkKeyGame) {
+        this.linkKeyGame = linkKeyGame;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getTypeProductId() {
+        return typeProductId;
+    }
+
+    public void setTypeProductId(int typeProductId) {
+        this.typeProductId = typeProductId;
     }
 
     // Phương thức để hiển thị thông tin đối tượng Product
