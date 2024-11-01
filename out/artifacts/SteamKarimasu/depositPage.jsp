@@ -18,6 +18,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
         <link rel="stylesheet" href="styles/css/depositPage.css">
+        <script src="js/deposit.js"></script>
 
     </head>
 
@@ -34,7 +35,7 @@
 
                 <div class="deposit-infor-head">
                     <div class="deposit-qr">
-                        <img src="assets/img_deposit_page/image 1.png" alt="">
+
                     </div>
 
                     <div class="accout-infor">
