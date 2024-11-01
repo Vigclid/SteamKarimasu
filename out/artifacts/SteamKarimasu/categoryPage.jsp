@@ -1,4 +1,8 @@
-<%-- 
+<%@ page import="repository.DAO.ProductsDAO" %>
+<%@ page import="model.Entity.product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%--
     Document   : categoryPage
     Created on : Oct 27, 2024, 5:09:13 PM
     Author     : Admin
@@ -24,242 +28,106 @@
 <jsp:include page="includes/navBarPage.jsp" />
 <body>
 
-    <div id="categoryPage" class="container categoryPage">
+<div id="categoryPage" class="container categoryPage">
 
-        <div class="row category-sort">
+    <div class="row category-sort">
 
-            <div class="col-3" class="page-category">
-                <input type="submit" class="all-category" value="All Category >" id="" name="">
-            </div>
-
-            <div class="col-3" class="page-sort-by">
-                <button id="sort-by" class="sort-by" onclick="toggleSortBy()">
-                    Sort By <div class="arrow">></div>
-                </button>
-
-                <div class="sort-by-table" id="sort-by-table">
-                    <div class="sort-by-items">
-                        <input type="submit" value="Name">
-                        <input type="submit" value="Price">
-                        <input type="submit" value="Most In Last Month">
-                    </div>
-                </div>
-            </div>
-
+        <div class="col-3" class="page-category">
+            <input type="submit" class="all-category" value="All Category >" id="" name="">
         </div>
 
-        <div class="row table-of-game">
+        <div class="col-3" class="page-sort-by">
+            <button id="sort-by" class="sort-by" onclick="toggleSortBy()">
+                Sort By <div class="arrow">></div>
+            </button>
 
-            <table class="table-game" id="table-game">
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-
-                <td class="game-cell">
-
-                    <div class="table-game-items">
-
-                        <div class="img-items">
-                            <img src="assets/img/blank.png" alt="">
-                        </div>
-    
-                        <div class="table-more-infor-items">
-    
-                            <div class="infor-items">
-                                <a href="" class="items-name">Name</a>
-                                <div class="date">Date</div>
-                                <div class="more-infor">10 bought 5 retend</div>
-                            </div>
-    
-                            <div class="item-price">
-                                <a href="" class="table-game-for-buy">$5.99</a>
-                                <a href="" class="table-game-for-rent">$1.99</a>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </td>
-                
-
-                
-            </table>
-
+            <div class="sort-by-table" id="sort-by-table">s
+                <div class="sort-by-items">
+                    <form action = "CategoryServlet" method="GET">
+                        <input type="submit" value="Name" name = "command">
+                        <input type="submit" value="Price" name = "command" >
+                        <input type="submit" value="Most In Last Month" name = "command">
+                    </form>
+                </div>
+            </div>
         </div>
 
     </div>
+
+    <div class="row table-of-game">
+
+        <table class="table-game" id="table-game">
+
+            <%
+                List<product> products = (List<product>) request.getAttribute("products");
+                if (products == null || products.isEmpty()) {
+                    ProductsDAO productDAO = new ProductsDAO();
+                    products = productDAO.getProducts();
+                }
+
+                for (product p : products) {
+            %>
+            <td class="game-cell">
+
+                <div class="table-game-items">
+
+                    <div class="img-items">
+                        <img src="<%= request.getContextPath() + "/" + p.getProductImage().replace("C:\\Users\\Admin\\Documents\\Github\\SteamKarimasu\\web\\", "") %>" alt="">
+                    </div>
+
+                    <div class="table-more-infor-items">
+
+                        <div class="infor-items">
+                            <a href="" class="items-name"><%= p.getProductName() %></a>
+                            <div class="date"><%= p.getDateOfUpdate() %></div>
+                            <div class="more-infor">10 bought 5 retend</div>
+                        </div>
+
+                        <div class="item-price">
+                            <%
+                                if (p.getPrice() != 0){
+                            %>
+                            <a href="" class="table-game-for-buy">$<%= p.getPrice() %></a>
+                            <%
+                            } else {
+                            %>
+                            <a href="" class="table-game-for-buy">Free</a>
+                            <%
+                                }
+                            %>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </td>
+
+            <%
+                }
+            %>
+
+
+
+
+        </table>
+
+    </div>
+
+</div>
 
 
 
 <script>
     window.onload = function() {
         const gameTable = document.getElementById('table-game');
-      
+
         // Lấy tất cả các ô game có trong bảng
         const gameCells = gameTable.querySelectorAll('.game-cell');
-      
+
         let row;
-      
+
         gameCells.forEach((cell, index) => {
             // Nếu chưa có hàng hoặc đã đủ 5 game trong hàng, tạo hàng mới
             if (index % 5 === 0) {
@@ -268,18 +136,18 @@
             }
             // Thêm ô game vào hàng
             row.appendChild(cell);
-          });
-      };
+        });
+    };
 
-        function toggleSortBy() {
-            var sidebar = document.getElementById("sort-by-table");
-            sidebar.classList.toggle("active");
+    function toggleSortBy() {
+        var sidebar = document.getElementById("sort-by-table");
+        sidebar.classList.toggle("active");
 
-            var arrow = document.querySelector("#sort-by .arrow");
-            arrow.classList.toggle("rotated");
-        }
-      
-      </script>
+        var arrow = document.querySelector("#sort-by .arrow");
+        arrow.classList.toggle("rotated");
+    }
+
+</script>
 </body>
 <jsp:include page="includes/mainFooterPage.jsp" />
 </html>

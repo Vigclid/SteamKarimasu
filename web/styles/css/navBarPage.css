@@ -2,6 +2,7 @@
     background-color: rgb(54, 51, 51);
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
     padding: 10px 30px;
     text-align: center;
     z-index: 1000; /* Đảm bảo navbar luôn ở trên */
@@ -55,13 +56,12 @@
 
 
 .navBarPage .icon-nav-page {
-    margin: 6px auto;
+    margin-left: 180px;
+    margin-top: 6px;
+    cursor: pointer;
 }
 
 .navBarPage .icon-nav-page img {
-    display: inline-block;
-    width: 100px;
-    height: auto;
 }
 
 .navBarPage .nav-search-join{
@@ -252,4 +252,22 @@
 .navBarPage #manage input:hover{
     color: white;
     background-color: rgb(247, 83, 12);
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(65, 61, 61);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    text-align: center;
+    width: 135px;
+    margin: 20px 30px 0px 20px;
+    font-size: 15px
+}
+
+
+.button-link:hover {
+    border-color: rgb(116, 186, 21);;
 }

@@ -187,5 +187,17 @@ public class userRepositoryimpl implements userRepository {
         return user;
     }
 
-
+    public void updateUserPassword(user user) {
+        String sql = " UPDATE users SET Pass =? WHERE Userid = " + user.getUserId();
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, user.getPassword());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

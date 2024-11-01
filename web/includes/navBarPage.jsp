@@ -1,4 +1,5 @@
-<%-- 
+<%@ page import="common.LoginSession" %>
+<%@ page import="model.Entity.user" %><%--
     Document   : navBarPage
     Created on : Oct 21, 2024, 12:08:59 PM
     Author     : Admin
@@ -8,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,6 +33,7 @@
 
     <div id="icon-nav-page">
         <img src="${pageContext.request.contextPath}/assets/img/mainPageLogo.png" alt="Logo">
+        <a href="${pageContext.request.contextPath}/mainPage.jsp"></a>
     </div>
 
     <form action="" method="">
@@ -39,17 +42,15 @@
                 <input type="text" name="search" placeholder="Search">
             </div>
             <!-- Conditionally rendered login button -->
+            <% user user = new LoginSession().getLoginSession(request);
+                if (user == null){
 
-            <%
-                String username = (String) session.getAttribute("username");
-                if (username == null) {
             %>
             <div class="navbar-join-us">
                 <a href="${pageContext.request.contextPath}/login.jsp" class="button">Join Us</a>
             </div>
             <%
-                } else {
-
+            } else {
 
             %>
             <button type="button" id="user-infor-button" class="user-infor-button" onclick="toggleUserInfor()">
@@ -61,29 +62,44 @@
                         <div class="accout-img">
                             <img src="${pageContext.request.contextPath}/assets/img/ARK.png" alt="User">
                         </div>
-                        <div class="accout-name">Name</div>
-                        <div class="accout-role">Role: Slave</div>
+                        <div class="accout-name"><%= user.getUsername() %></div>
+                        <div class="accout-role"><%= new LoginSession().getRoleNameUser(request)%></div>
                         <div class="accout-kcoins">
-                            <input class="kcoins" type="text" value="99.99" readonly>
+                            <input class="kcoins" type="text" value="<%= user.getTotalAmount()%>" readonly>
                         </div>
                     </div>
                     <div class="accout-feature">
                         <div class="row feature">
-                            <div class="col-6"><input type="submit" value="Profile"></div>
-                            <div class="col-6"><input type="submit" value="Deposit"></div>
+                            <div class="col-6">
+                                <a href="${pageContext.request.contextPath}/profilePage.jsp" class="button-link">Profile</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="yourDepositLink" class="button-link">Deposit</a>
+                            </div>
                         </div>
                         <div class="row feature">
-                            <div class="col-6"><input type="submit" value="News"></div>
-                            <div class="col-6"><input type="submit" value="LogOut"></div>
+                            <div class="col-6">
+                                <a href="yourNewsLink" class="button-link">News</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="yourLogoutLink" class="button-link">LogOut</a>
+                            </div>
                         </div>
+
+                        <div class="row feature">
+                            <div class="col-12 ">
+                                <a href="yourNewsLink" class="button-link" style="background-color: rgb(222, 81, 25);">News</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
             <%
                 }
 
             %>
-            <%--            --%>
 
         </div>
     </form>

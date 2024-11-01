@@ -3,7 +3,6 @@ import db.ConnectDB;
 import model.Entity.role;
 import repository.RoleRepository;
 
-import javax.management.relation.Role;
 import java.sql.*;
 
 public class RoleRepositoryImpl implements RoleRepository{
