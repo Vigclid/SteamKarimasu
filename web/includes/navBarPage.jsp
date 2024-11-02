@@ -24,8 +24,8 @@
 
     <div class="side-bar" id="side-bar">
         <div class="side-bar-items">
-            <a href="#">Home</a>
-            <a href="#">Category</a>
+            <a href="${pageContext.request.contextPath}/mainPage.jsp">Home</a>
+            <a href="${pageContext.request.contextPath}/categoryPage.jsp">Category</a>
             <a href="#">Buy</a>
             <a href="#">Rent</a>
         </div>
@@ -74,7 +74,7 @@
                                 <a href="${pageContext.request.contextPath}/profilePage.jsp" class="button-link">Profile</a>
                             </div>
                             <div class="col-6">
-                                <a href="yourDepositLink" class="button-link">Deposit</a>
+                                <a href="${pageContext.request.contextPath}/depositPage.jsp" class="button-link">Deposit</a>
                             </div>
                         </div>
                         <div class="row feature">

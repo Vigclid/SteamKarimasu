@@ -12,46 +12,56 @@
         <title>JSP Page</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
         <link rel="stylesheet" href="styles/css/depositPage.css">
-
+        <script src="js/deposit.js"></script>
     </head>
 
+    
     <jsp:include page="includes/navBarPage.jsp" />
-
-    <body>
+<body>
 
     <div id="depositPage" class="container depositPage">
 
         <div class="row">
 
-            <div class="col-7 deposit-infor">
+            <div class="col-8 deposit-infor">
 
 
                 <div class="deposit-infor-head">
                     <div class="deposit-qr">
-                        <img src="assets/img_deposit_page/image 1.png" alt="">
+
                     </div>
 
-                    <div class="accout-infor">
-                        <div class="accout-number">
-                            Account Number: 0921 386 9999
+
+
+                    <div class="banking">
+
+                        <div class="bank-options">
+                            <table class="options">
+                                <tbody>
+
+                                    <tr>
+                                        <td><input type="submit" id="btn1" value=""></td>
+                                        <td><input type="submit" id="btn2" value=""></td>
+                                        <td><input type="submit" id="btn3" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="submit" id="btn4" value=""></td>
+                                        <td><input type="submit" id="btn5" value=""></td>
+                                        <td><input type="submit" id="btn6" value=""></td>
+                                    </tr>
+    
+                                </tbody>
+                            </table>
                         </div>
 
-                        <div class="accout-bank">
-                            Bank: Tpbank
-                        </div>
-
-                        <div class="accout-owner">
-                            Owner: Nguyen Viet Nguyen
-                        </div>
-
-                        <div class="accout-content">
-                            Content: <div>Desposit NameofUser</div>
+                        <div class="amount">
+                            <input type="text"  value="Sent the amount: " readonly>
                         </div>
                     </div>
                 </div>
@@ -78,7 +88,7 @@
 
             </div>
 
-            <div class="col-4 deposit-history">
+            <div class="col-3 deposit-history">
                 
                 <h1 class="deposit-history-title">Desposit History</h1>
 
@@ -96,6 +106,7 @@
                                 <td>huh</td>
                                 <td>huh</td>
                             </tr>
+                            
                         </tbody>
                     </table>
 
@@ -109,6 +120,5 @@
 
 
 </body>
-
-<jsp:include page="includes/mainFooterPage.jsp" />
+    <jsp:include page="includes/mainFooterPage.jsp" />
 </html>

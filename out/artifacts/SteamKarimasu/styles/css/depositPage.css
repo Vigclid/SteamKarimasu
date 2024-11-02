@@ -17,33 +17,91 @@ body{
     display: flex;
 }
 
+#depositPage .deposit-qr{
+
+}
+
 #depositPage .deposit-qr img{
+    width: 260px;
+    height: 260px;
     border-radius: 6px;
 }
 
-#depositPage .accout-infor{
+#depositPage .banking{
     margin-left: 50px;
     text-align: justify;
     width: 600px;
-    border: 1px solid rgb(116, 186, 21);
-    background-color: rgba(117, 186, 21, 0.2);
+    box-shadow: 10px 10px 5px #322c2c;
+    background-color: #4d4b4b;
     height: 240px;
-    padding-left: 20px;
     padding-top: 25px;
     line-height: 35px;
     border-radius: 20px;
     color: white;
-    
+
 }
 
-#depositPage .accout-content{
+.bank-options{
+    display: flex;
+    justify-content: center;
+}
+
+.options{
+
+}
+
+.options td input{
+    border: none;
+    text-align: center;
+    width: 120px;
+    height: 45px;
+    margin: 0px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(54, 51, 51);
+    transition: 0.5s ease;
+    border: 0.1px solid rgb(116 186 21 / 49%);
+}
+
+.options td input:hover{
+    transform: scale(1.1);
+
+    background-color: rgb(116, 109, 109);
+}
+.options td input:focus{
+    outline: rgb(116, 186, 21);
+}
+
+.amount{
+    display: flex;
+    justify-content: center;
+}
+
+.amount input{
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 5px;
+    width: 300px;
+    color: white;
+    background-color: rgb(54, 51, 51);
+    border: none;
+}
+
+.amount input:focus{
+    outline: none;
+}
+
+/* #depositPage .accout-content{
     display: flex;
 }
 
 #depositPage .accout-content div{
     color: red;
     margin-left: 6px;
-}
+} */
+
+
 
 #depositPage .deposit-more-infor{
     margin-top: 50px;
@@ -103,27 +161,27 @@ body{
 }
 
 #depositPage .deposit-history-table::-webkit-scrollbar {
-    width: 12px; 
-    background-color: rgb(54, 51, 51); 
-    border-radius: 10px; 
+    width: 12px;
+    background-color: rgb(54, 51, 51);
+    border-radius: 10px;
 }
 
 #depositPage .deposit-history-table::-webkit-scrollbar-thumb {
-    background-color: rgb(116, 186, 21); 
+    background-color: rgb(116, 186, 21);
     border-radius: 10px;
-    border: 3px solid transparent; 
-    background-clip: padding-box; 
+    border: 3px solid transparent;
+    background-clip: padding-box;
     transition: 0.8s ease;
 
 }
 
 #depositPage .deposit-history-table::-webkit-scrollbar-track {
-    background-color: rgb(39, 36, 36); 
-    border-radius: 10px; 
+    background-color: rgb(39, 36, 36);
+    border-radius: 10px;
 }
 
 #depositPage .deposit-history-table::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(140, 222, 25); 
+    background-color: rgb(140, 222, 25);
 }
 
 #depositPage .deposit-history-table table thead{
@@ -135,7 +193,7 @@ body{
 
 #depositPage .deposit-history-table th{
     border-left:1px solid white;
-    
+
 }
 
 #depositPage .deposit-history-table th:first-child{
@@ -156,4 +214,9 @@ body{
 
 #depositPage .deposit-history-table td:first-child{
     border: none;
+}
+
+.deposit-history-title{
+    font-size: 30px;
+    text-align: center;
 }
