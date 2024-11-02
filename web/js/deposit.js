@@ -100,7 +100,7 @@ async function checkPaid(price,content){
                     checkPaid(price, content);
                 }, 100);
             }
-        } catch {
+        } catch (err){
             console.error("Lỗi");
         }
 

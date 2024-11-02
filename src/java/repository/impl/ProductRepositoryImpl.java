@@ -60,8 +60,99 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public product findProductById(int id) {
+        String sql = "SELECT * FROM Products WHERE Productid = " + id;
+        try {
+            ConnectDB db = ConnectDB.getInstance();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                product product = new product();
+                product.setProductId(rs.getInt(1));
+                product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setProdcuctDescription(rs.getString(4));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
+                product.setUserId(rs.getInt(8));
+                product.setTypeId(rs.getInt(9));
+                return product;
+
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    @Override
+    public product findProductByName(String name) {
+        String sql = "Select * from Products where Productname Like '% " + name + "%'" ;
+        try {
+            product product = new product();
+            ConnectDB db = ConnectDB.getInstance();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                product.setProductId(rs.getInt(1));
+                product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setProdcuctDescription(rs.getString(4));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
+                product.setUserId(rs.getInt(8));
+                product.setTypeId(rs.getInt(9));
+                return product;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<product> ListProduct() {
+        List<product> products = new ArrayList<>();
+        String sql = "SELECT * FROM Products ";
+        try {
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                product product = new product();
+                product.setProductId(rs.getInt(1));
+                product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setProdcuctDescription(rs.getString(4));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
+                products.add(product);
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return products;
+    }
+
+    @Override
     public List<product> ListProductByName() {
-        String sql = "SELECT * FROM master.products ";
+        String sql = "SELECT * FROM Products ";
         List<product> products = new ArrayList<>();
         product product = new product();
         try {
@@ -74,6 +165,9 @@ public class ProductRepositoryImpl implements ProductRepository {
                 product.setProductName(rs.getString(2));
                 products.add(product);
             }
+            con.close();
+            stmt.close();
+            rs.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
