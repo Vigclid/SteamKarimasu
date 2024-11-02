@@ -12,7 +12,10 @@ import java.util.List;
 public class TestDB implements DatabaseInfo{
     public static void main(String[] args) throws Exception {
         ProductRepositoryImpl productRepository = new ProductRepositoryImpl();
-        System.out.println(productRepository.findIdProductByName("Brawlhalla"));
+        List<product> products = productRepository.ListProductByName();
+        for (product p : products){
+            System.out.println(p);
+        }
     }
 
 }
