@@ -78,7 +78,7 @@ body{
     justify-content: center;
 }
 
-.amount input{
+.amount p{
     margin-top: 15px;
     text-align: center;
     border-radius: 5px;
@@ -219,4 +219,18 @@ body{
 .deposit-history-title{
     font-size: 30px;
     text-align: center;
+}
+
+
+#countdown {
+    display: none; /* Ẩn modal ban đầu */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
 }

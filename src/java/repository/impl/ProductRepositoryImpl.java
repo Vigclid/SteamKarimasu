@@ -42,9 +42,8 @@ public class ProductRepositoryImpl implements ProductRepository {
         try {
             ConnectDB db = new ConnectDB();
             Connection con = db.openConnecion();
-            String sql = "SELECT Productid FROM products WHERE Productname LIKE '%" + name + "%'";
+            String sql = "SELECT Productid FROM Products WHERE Productname LIKE '%" + name + "%'";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setString(1, name);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 return rs.getInt("Productid");

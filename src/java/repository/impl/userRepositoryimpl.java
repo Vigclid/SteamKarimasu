@@ -122,7 +122,7 @@ public class userRepositoryimpl implements userRepository {
     }
 
     public byte LoginCheck(String username, String password){
-        String sql = "SELECT * FROM users WHERE Username LIKE  ? AND Pass LIKE ?";
+        String sql = "SELECT * FROM Users WHERE Username LIKE  ? AND Pass LIKE ?";
         ConnectDB db = ConnectDB.getInstance();
         Connection con ;
         try {
@@ -138,7 +138,7 @@ public class userRepositoryimpl implements userRepository {
                 if (rs.getByte(5) != 0)    success = true;
             }
             if (success) {
-                sql = "SELECT ur.Roleid FROM userrole ur WHERE Userid =?";
+                sql = "SELECT ur.Roleid FROM Userrole ur WHERE Userid =?";
                 stmt = con.prepareStatement(sql);
                 stmt.setInt(1, Tempid);
                 rs = stmt.executeQuery();
@@ -188,7 +188,7 @@ public class userRepositoryimpl implements userRepository {
     }
 
     public void updateUserPassword(user user) {
-        String sql = " UPDATE users SET Pass =? WHERE Userid = " + user.getUserId();
+        String sql = " UPDATE Users SET Pass =? WHERE Userid = " + user.getUserId();
         ConnectDB db = ConnectDB.getInstance();
         Connection con ;
         try {
@@ -196,6 +196,28 @@ public class userRepositoryimpl implements userRepository {
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, user.getPassword());
             stmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void increaseKcoin(float amount , int userId) {
+        String sql = "EXEC increaseTotalAmount @Userid= ? , @Amount = ?;";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1,userId);
+            stmt.setFloat(2,amount);
+
+            stmt.executeQuery();
+
+            stmt.close();
+            con.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
