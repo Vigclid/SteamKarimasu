@@ -165,6 +165,34 @@ public class userRepositoryimpl implements userRepository {
         return user;
     }
 
+    @Override
+    public User findUserByEmail(String email) {
+        String sql = "SELECT * FROM users WHERE email LIKE ?";
+        int idUser = 0;
+        try {
+            ConnectDB db = ConnectDB.getInstance();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, "%"+email+"%");
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                User user = new User();
+                user.setUserid(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setDob(rs.getString(4));
+                user.setActive(rs.getByte(5));
+                user.setPass(rs.getString(6));
+                user.setPhonenumber(rs.getString(7));
+                user.setTotalAmount(rs.getFloat(8));
+                return user;
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null ;
+    }
+
     public void updateUserPassword(User user) {
         String sql = " UPDATE users SET Pass =? WHERE Userid = " + user.getUserid();
         ConnectDB db = ConnectDB.getInstance();

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/forgotPage.css">
 </head>
 <body>
-<form action="" class=""  method="POST">
+<form action="ResetPasword"  method="POST">
 
     <div class="container baseCard">
         <div class="row">
@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="input_infor">
-<%--                    <label for="confirm_email"></label>--%>
-                    <input type="text" name="confirm_email" value="" placeholder="Email or Phone Number">
+                    <label for="confirm_email"></label>
+                    <input type="text" name="confirm_email" id="confirm_email"  placeholder="Email or Phone Number">
                 </div>
 
                 <div class="button_infor">
@@ -70,17 +70,9 @@
 
                     <input type="submit" class="find_email" value="Find">
 
-
-
-
                 </div>
             </div>
-
-
-
-
         </div>
-
     </div>
 
     <div class="container-s footer">
@@ -91,6 +83,7 @@
 
 </form>
 
+<p class="text-bg-danger">${mess}</p>
 
 </body>
 </html>

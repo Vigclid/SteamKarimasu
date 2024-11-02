@@ -1,5 +1,7 @@
 package model.Entity;
 
+import java.util.List;
+
 public class Product {
     private int productId;
     private String productName;

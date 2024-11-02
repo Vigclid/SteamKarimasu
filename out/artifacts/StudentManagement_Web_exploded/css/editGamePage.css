@@ -1,0 +1,296 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#editGamePage {
+    margin-top: 140px;
+    margin-bottom: 50px;
+}
+
+#editGamePage .add-edit-game{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#editGamePage .add-edit-game input{
+    width: 250px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    text-align: left;
+    justify-content: left;
+    padding-left: 50px;
+}
+
+#editGamePage .edit-game-button{
+    color: rgb(87, 137, 21);
+   
+}
+
+#editGamePage .search-game-button{
+    color: white;
+}
+
+#editGamePage .add-game-button{
+    color: white;
+}
+
+#editGamePage .edit-game-table{
+    margin-top: 10px;
+    margin-left: 105px;
+}
+
+#editGamePage .rent-infor input{
+    border: none;
+    color: white;
+    
+    margin-bottom: 20px;
+}
+
+#editGamePage .game-information{
+    width: 325px;
+    height: 38px;
+    background-color: rgb(116, 186, 21);
+    font-size: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#editGamePage .rent-out-list{
+    padding-bottom: 29.5px;
+    background-color: rgb(54, 51, 51);
+    height: 29px;
+    width: 288px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#editGamePage .edit-game-name{
+    margin-bottom: 20px;
+}   
+
+#editGamePage .game-name{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#editGamePage .input-game-name{
+    width: 617.43px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(54, 51, 51);
+    border: 0.1px solid rgb(116, 186, 21);
+    color: white;
+    padding: 10px;
+}
+
+#editGamePage .edit-game-img{
+    margin-bottom: 20px;
+}
+
+#editGamePage .game-img{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+
+#editGamePage .upload-box {
+    background-color: rgb(54, 51, 51);
+    width: 617.43px;
+    height: 366.06px;
+    border: 2px solid rgb(116, 186, 21);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: #777;
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#editGamePage .preview {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#editGamePage .thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#editGamePage .thumbnail-box {
+  width: 144px;
+  height: 75px;
+  border: 2px solid rgb(116, 186, 21);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: rgb(54, 51, 51);
+}
+
+#editGamePage .thumbnail-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#editGamePage .edit-game-description{
+    margin-bottom: 20px;
+}
+
+#editGamePage .game-description{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#editGamePage .input-game-description{
+    width: 617.43px;
+    height: 161.82px;
+    border-radius: 5px;
+    background-color: rgb(54, 51, 51);
+    border: 0.1px solid rgb(116, 186, 21);
+    color: white;
+    padding: 10px;
+    overflow: auto;
+}
+
+#editGamePage .input-game-description::-webkit-scrollbar {
+    width: 8px; 
+    background-color: rgb(54, 51, 51); 
+    border-radius: 10px; 
+}
+
+#editGamePage .input-game-description::-webkit-scrollbar-thumb {
+    background-color: rgb(116, 186, 21); 
+    border-radius: 10px;
+    border: 3px solid transparent; 
+    background-clip: padding-box; 
+    transition: 0.8s ease;
+    
+
+}
+
+#editGamePage .input-game-description::-webkit-scrollbar-track {
+    background-color: rgb(39, 36, 36); 
+    border-radius: 10px; 
+}
+
+#editGamePage .input-game-description::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(140, 222, 25); 
+}
+
+
+#editGamePage .edit-game-down-link{
+    margin-bottom: 20px;
+}
+
+#editGamePage .game-down-link{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#editGamePage .input-game-down-link{
+    width: 617.43px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(54, 51, 51);
+    border: 0.1px solid rgb(116, 186, 21);
+    color: white;
+    padding: 10px;
+}
+
+#editGamePage .edit-game-price{
+    margin-bottom: 50px;
+}
+
+#editGamePage .game-price{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+#editGamePage .input-game-price{
+    width: 179.95px;
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(54, 51, 51);
+    border: 0.1px solid rgb(116, 186, 21);
+    color: white;
+    padding: 10px;
+}
+
+#editGamePage .confirm-edit-game{
+    margin-left: 135px
+}
+#editGamePage .confirm-edit-game input{
+    border: none;
+}
+
+#editGamePage .confirm-edit{
+    width: 135px;
+    height: 50px;
+    background-color: rgb(116, 186, 21);
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    transition: 0.5s ease;
+}
+
+
+#editGamePage .confirm-edit:hover{
+    transform: scale(1.1);
+    background-color: rgb(143, 226, 26);
+}
+
+#editGamePage .delete-edit{
+    width: 135px;
+    height: 50px;
+    background-color: rgb(194, 65, 10);
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    transition: 0.5s ease;
+    margin-left: 100px;
+}
+
+#editGamePage .delete-edit:hover{
+    transform: scale(1.1);
+    background-color: rgb(254, 85, 13);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

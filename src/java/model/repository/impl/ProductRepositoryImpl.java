@@ -14,7 +14,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public void addProduct(ProductDTO productDTO) {
-        String sql = "INSERT INTO master.products (Productname, Prodcutimage, ProductDescription, DateOfUpdate, LinkKeyGame, Price, Userid, Typeid) Values (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO master.products (Productname, Productimage, ProductDescription, DateOfUpdate, LinkKeyGame,Price, Userid, Typeid) Values (?,?,?,?,?,?,?,?)";
         ImageUtils imageUtils = new ImageUtils();
         try{
             Product product = new ProductConverter().convertProductDTOToProductEntity(productDTO);
@@ -26,10 +26,10 @@ public class ProductRepositoryImpl implements ProductRepository {
             stmt.setString(2, product.getProductImage());
             stmt.setString(3, product.getDescription());
             stmt.setString(4, product.getDateOfUpdate());
-            stmt.setString(5, product.getLinkKeyGame());
             stmt.setDouble(6, product.getPrice());
             stmt.setInt(7,product.getUserId());
             stmt.setInt(8,product.getTypeProductId());
+            stmt.setString(5, product.getLinkKeyGame());
             stmt.executeUpdate();
             con.close();
             stmt.close();
@@ -60,23 +60,94 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public List<Product> ListProductByName() {
-        String sql = "SELECT * FROM master.products ";
+    public List<Product> ListProduct() {
         List<Product> products = new ArrayList<>();
-        Product product = new Product();
+        String sql = "SELECT * FROM master.products ";
         try {
             ConnectDB db = new ConnectDB();
             Connection con = db.openConnecion();
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
+                Product product = new Product();
                 product.setProductId(rs.getInt(1));
                 product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setDescription(rs.getString(4));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
                 products.add(product);
             }
+            rs.close();
+            stmt.close();
+            con.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         return products;
     }
+
+    @Override
+    public Product findProductById(int id) {
+        String sql = "SELECT * FROM master.products WHERE Productid = " + id;
+        try {
+            ConnectDB db = ConnectDB.getInstance();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                Product product = new Product();
+                product.setProductId(rs.getInt(1));
+                product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setDescription(rs.getString(4));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
+                product.setUserId(rs.getInt(8));
+                product.setTypeProductId(rs.getInt(9));
+                return product;
+
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Product findProductByName(String name) {
+        String sql = "Select * from products where Productname Like '% " + name + "%'" ;
+        try {
+            Product product = new Product();
+            ConnectDB db = ConnectDB.getInstance();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                product.setProductId(rs.getInt(1));
+                product.setProductName(rs.getString(2));
+                product.setProductImage(rs.getString(3));
+                product.setDescription(rs.getString(4));
+                product.setDateOfUpdate(rs.getString(5));
+                product.setLinkKeyGame(rs.getString(6));
+                product.setPrice(rs.getFloat(7));
+                product.setUserId(rs.getInt(8));
+                product.setTypeProductId(rs.getInt(9));
+                return product;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

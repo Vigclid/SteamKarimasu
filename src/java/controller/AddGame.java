@@ -13,6 +13,7 @@ import model.repository.impl.userRepositoryimpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -90,7 +91,7 @@ public class AddGame extends HttpServlet {
 
         ProductRepositoryImpl productRepository = new ProductRepositoryImpl();
         ProductDTO productDTO = new ProductDTO(nameGame, Image, gameDescription, gameLink, Price,userId, dateCreated);
-        List<Product> products = productRepository.ListProductByName();
+        List<Product> products = productRepository.ListProduct();
         boolean check = false;
         for(Product product : products) {
             if (product.getProductName().equals(nameGame)) {

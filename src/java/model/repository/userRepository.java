@@ -10,4 +10,5 @@ public interface userRepository {
     List<User> getAllUsers() throws Exception;
     byte LoginCheck(String username, String password);
     User findUserbyName(String name);
+    User findUserByEmail(String email);
 }

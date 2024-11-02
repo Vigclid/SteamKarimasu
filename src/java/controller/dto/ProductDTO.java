@@ -1,5 +1,7 @@
 package controller.dto;
 
+import java.util.List;
+
 public class ProductDTO {
     private int idProduct;
     private String nameProduct;

@@ -8,5 +8,7 @@ import java.util.List;
 public interface ProductRepository {
     void addProduct(ProductDTO productDTO);
     int findIdProductByName(String name);
-    List<Product> ListProductByName();
+    List<Product> ListProduct();
+    Product findProductById(int id);
+    Product findProductByName(String name);
 }
