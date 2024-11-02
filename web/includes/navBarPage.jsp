@@ -82,7 +82,7 @@
                                 <a href="yourNewsLink" class="button-link">News</a>
                             </div>
                             <div class="col-6">
-                                <a href="yourLogoutLink" class="button-link">LogOut</a>
+                                <a href="LogoutServlet" class="button-link">LogOut</a>
                             </div>
                         </div>
 

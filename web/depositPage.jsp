@@ -1,5 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="common.LoginSession" %>
-<%@ page import="model.Entity.user" %><%--
+<%@ page import="model.Entity.user" %>
+<%@ page import="model.Entity.CoinBill" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="repository.impl.CoinBillRepositoryImpl" %><%--
     Document   : depositPage
     Created on : Oct 24, 2024, 7:25:16 PM
     Author     : Admin
@@ -104,6 +109,18 @@
                 <h1 class="deposit-history-title">Desposit History</h1>
 
                 <div class="deposit-history-table">
+                    <%
+                        List<CoinBill> coinBills = new ArrayList<>();
+                        try {
+                            coinBills = new CoinBillRepositoryImpl().getDepositHistory(new LoginSession().getLoginSession(request).getUserId());
+                        }
+                        catch (NullPointerException e){
+                            coinBills = new ArrayList<>();
+                        }
+
+
+                        request.setAttribute("DepositHistory", coinBills);
+                    %>
 
                     <table>
                         <thead>
@@ -113,11 +130,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <c:forEach var="deposit" items="${DepositHistory}">
                             <tr>
-                                <td>huh</td>
-                                <td>huh</td>
+                                <td>${deposit.currency}</td>
+                                <td>${deposit.dateOfCrate}</td>
                             </tr>
-                            
+                        </c:forEach>
                         </tbody>
                     </table>
 

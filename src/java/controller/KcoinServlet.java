@@ -1,6 +1,11 @@
 
 package controller;
 
+import common.LoginSession;
+import repository.impl.CoinBillRepositoryImpl;
+import repository.impl.userRepositoryimpl;
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -66,7 +71,16 @@ public class KcoinServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        String MaGiaoDich = request.getParameter("MaGiaoDich");
+        float amount = Float.parseFloat(request.getParameter("amount"))/24000;
+
+        boolean CheckMGD = new CoinBillRepositoryImpl().checkMGD(MaGiaoDich,request);
+
+        if (!CheckMGD){
+            new CoinBillRepositoryImpl().addBill(amount,MaGiaoDich,new LoginSession().getLoginSession(request).getUserId());
+            new userRepositoryimpl().increaseKcoin(amount,new LoginSession().getLoginSession(request).getUserId());
+        }
         request.getRequestDispatcher("mainPage.jsp").include(request,response);
     }
 
