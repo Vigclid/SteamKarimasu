@@ -93,12 +93,13 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public product findProductByName(String name) {
-        String sql = "Select * from Products where Productname Like '% " + name + "%'" ;
+        String sql = "Select * from Products where Productname Like ?" ;
         try {
             product product = new product();
             ConnectDB db = ConnectDB.getInstance();
             Connection con = db.openConnecion();
             PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1,name);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 product.setProductId(rs.getInt(1));

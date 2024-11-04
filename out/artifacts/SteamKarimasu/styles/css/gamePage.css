@@ -1,0 +1,257 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+#game{
+    margin-top: 100px
+}
+#game .game-title{
+    margin-top: 40px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+#game .advertisement a{
+    padding: 2px;
+}
+
+#game .advertisement{
+    margin-bottom: 50px;
+}
+
+#game .game-img{
+    padding: 2px;
+}
+
+#game .gallery {
+    display: flex;
+    flex-direction: column;
+}
+#game .main-image {
+    width: 836px;
+    height: 488px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+
+}
+#game .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+}
+#game .thumbnail-container {
+    display: flex;
+    justify-content: left;
+    width: 836px;
+
+}
+
+
+
+
+#game .thumbnail {
+    width: 150px;
+    height: 65px;
+    padding-right: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+#game .thumbnail:last-child {
+    padding-right: 0;
+}
+
+#game .thumbnail img {
+    margin-right: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#game .thumbnail:hover {
+    transform: scale(1.1);
+}
+
+#game .game-about{
+    padding: 0;
+}
+
+#game .about-img{
+    margin-left: 100px;
+}
+
+#game .about-img img{
+    padding: 2px;
+    width: 460px;
+    height: 194px;
+}
+
+#game .about-content{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+#game .about-content p{
+    padding: 2px;
+    text-align: justify;
+    color: white;
+}
+
+#game .buy-game{
+    margin-left: 100px;
+    position: relative;
+}
+
+#game .buy-card{
+    padding: 2px;
+    background: linear-gradient(to right, rgb(63, 62, 62,1),rgb(154, 151, 151));
+    height: 70px;
+    border-radius: 5px;
+
+}
+
+
+#game .buy-card-title{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+#game .more-infor-buy{
+    display: flex;
+    position: absolute;
+    bottom: -28%;
+    right: 5%;
+    background-color: rgb(28, 25, 25);
+    height: 40px;
+    border-radius: 5px;
+}
+
+#game .buy-price{
+    width: 110px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+}
+
+#game .more-infor-buy input{
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(54, 87, 9), rgb(109, 176, 19));
+    color: white;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+#game .more-infor-buy input:hover{
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(109, 176, 19), rgb(54, 87, 9));
+    color: white;
+}
+
+
+#game .rent-game{
+    margin-top: 30px;
+    margin-left: 100px;
+    position: relative;
+}
+
+#game .rent-it-out{
+    margin-top: 30px;
+    margin-left: 100px;
+    position: relative;
+}
+
+#game .rent-card{
+    padding: 2px;
+    background: linear-gradient(to right, rgb(63, 62, 62,1),rgb(154, 151, 151));
+    height: 70px;
+    border-radius: 5px;
+}
+
+#game .rent-card-title{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+#game .more-infor-rent{
+    display: flex;
+    position: absolute;
+    bottom: -28%;
+    right: 5%;
+    background-color: rgb(28, 25, 25);
+    height: 40px;
+    border-radius: 5px;
+}
+
+#game .rent-price{
+    width: 110px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+}
+
+#game .more-infor-rent input{
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(97, 34, 7), rgb(217, 77, 16));
+    color: white;
+}
+
+#game .rent-it-out-card{
+    padding: 2px;
+    background: linear-gradient(to right, rgb(63, 62, 62,1),rgb(154, 151, 151));
+    height: 70px;
+    border-radius: 5px;
+}
+
+#game .rent-it-out-card-title{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+#game .more-infor-rent-it-out{
+    display: flex;
+    position: absolute;
+    bottom: -28%;
+    right: 5%;
+    background-color: rgb(28, 25, 25);
+    height: 40px;
+    border-radius: 5px;
+}
+
+#game .rent-it-out-price{
+    width: 110px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+}
+
+#game .more-infor-rent-it-out input {
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(61, 9, 98), rgb(123, 17, 199));
+    color: white;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+#game .more-infor-rent-it-out input:hover {
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(123, 17, 199), rgb(61, 9, 98));
+    color: white;
+}
+#game .body-game-page{
+    margin-bottom: 120px;
+}

@@ -1,5 +1,7 @@
 <%@ page import="common.LoginSession" %>
-<%@ page import="model.Entity.user" %><%--
+<%@ page import="model.Entity.user" %>
+<%@ page import="repository.UserRoleRepository" %>
+<%@ page import="repository.impl.UserRoleRepositoryImpl" %><%--
     Document   : navBarPage
     Created on : Oct 21, 2024, 12:08:59 PM
     Author     : Admin
@@ -82,15 +84,20 @@
                                 <a href="yourNewsLink" class="button-link">News</a>
                             </div>
                             <div class="col-6">
-                                <a href="yourLogoutLink" class="button-link">LogOut</a>
+                                <a href="LogoutServlet" class="button-link">LogOut</a>
                             </div>
                         </div>
 
+                        <% int id = new LoginSession().getLoginSession(request).getUserId();
+                            if(id == 1) {
+
+                        %>
                         <div class="row feature">
                             <div class="col-12 ">
-                                <a href="yourNewsLink" class="button-link" style="background-color: rgb(222, 81, 25);">News</a>
+                                <a href="${pageContext.request.contextPath}/searchGamePage.jsp" class="button-link" style="background-color: rgb(222, 81, 25);">Manage</a>
                             </div>
                         </div>
+                        <%}%>
 
                     </div>
                 </div>

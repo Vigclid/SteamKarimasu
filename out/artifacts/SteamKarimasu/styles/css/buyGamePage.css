@@ -1,0 +1,111 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#buyGamePage {
+    margin-top: 150px;
+}
+
+#buyGamePage .payment-card{
+    margin-left: 150px;
+    background: linear-gradient(to right, rgb(98, 97, 97), rgb(54, 51, 51));
+    color: white;
+    width: 1002px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.553);
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+
+#buyGamePage .payment-card h1{
+    margin-top: 10px;
+    display: flex;
+    padding-left: 18px;
+}
+
+#buyGamePage .infor-card{
+    background-color: rgb(35, 34, 34);
+    margin: 0 20px;
+    height: 200px;
+}
+
+#buyGamePage .items-infor-card{
+    margin: 20px;
+    display: flex;
+    position: relative;
+
+}
+
+#buyGamePage .img-game{
+    width: 299px;
+    height: 150px;
+}
+
+#buyGamePage .img-game img{
+    width: 100%;
+    height: 100%;
+}
+
+#buyGamePage .infor-game{
+    margin-left: 40px;
+}
+
+#buyGamePage .title{
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#buyGamePage .sub1{
+    font-size: 15px;
+    text-align: justify;
+    color: rgb(116, 186, 21);
+
+}
+
+#buyGamePage .sub2{
+    font-size: 15px;
+    text-align: justify;
+    text-decoration: none;
+    color: white;
+}
+
+#buyGamePage .price{
+    position: absolute;
+    right: 0%;
+    bottom: -5%;
+}
+
+#buyGamePage .confirm input{
+    color: white;
+    margin-top: 15px;
+    margin-left: 835px;
+    margin-bottom: 15px;
+    width: 135px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(116, 186, 21);
+    transition: 0.5s ease;
+    border: none;
+}
+
+#buyGamePage .confirm input:hover{
+    background-color: rgb(143, 230, 23);
+    transform: scale(1.1);
+}
+
+#buyGamePage .exit input{
+    color: white;
+    margin-top: 15px;
+    margin-left: 835px;
+    margin-bottom: 15px;
+    width: 135px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(225, 75, 11);
+    transition: 0.5s ease;
+    border: none;
+}
+
+#buyGamePage .exit input:hover{
+    background-color: rgb(254, 85, 12);
+    transform: scale(1.1);
+}

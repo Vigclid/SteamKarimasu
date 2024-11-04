@@ -12,4 +12,6 @@ public interface userRepository {
     byte LoginCheck(String username, String password);
     user findUserbyName(String name);
     void increaseKcoin(float amount , int userId);
+
+    int decreaseKcoin(float amount , int userId);
 }

@@ -98,8 +98,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$49.99</a>
-                        <a href="" class="trending-for-rent">$5.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Black Myth: Wukong'); return false;">$49.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('Black Myth: Wukong'); return false;">$5.99</a>
                     </div>
 
                 </div>
@@ -121,8 +121,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">Free</a>
-                        <a href="" class="trending-for-rent">$1.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Brawlhalla'); return false;">$49.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('Brawlhalla'); return false;">$5.99</a>
                     </div>
 
                 </div>
@@ -145,8 +145,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$59.99</a>
-                        <a href="" class="trending-for-rent">$7.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Sekiro'); return false;">$59.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('Sekiro'); return false;">$7.99</a>
                     </div>
 
                 </div>
@@ -169,8 +169,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$29.99</a>
-                        <a href="" class="trending-for-rent">$4.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('PUBG'); return false;">$29.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('PUBG'); return false;">4.99</a>
                     </div>
 
                 </div>
@@ -193,8 +193,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="trending-for-buy">$39.99</a>
-                        <a href="" class="trending-for-rent">$4.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Luffy Online'); return false;">$39.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('Luffy Online'); return false;">$4.99</a>
                     </div>
 
                 </div>
@@ -225,10 +225,9 @@
                         <div class="date">2023-09-01</div>
                         <div class="more-infor">6 bought 5 retend</div>
                     </div>
-
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$19.99</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
+                        <a href="#" class="featurated-for-buy" onclick="submitForm('Japanese Book'); return false;">$19.99</a>
+                        <a href="#" class="featurated-for-rent" onclick="submitForm('Japanese Book'); return false;">$1.99</a>
                     </div>
 
                 </div>
@@ -250,8 +249,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$99.99</a>
-                        <a href="" class="featurated-for-rent">$10.99</a>
+                        <a href="#" class="featurated-for-buy" onclick="submitForm('Headphones Testing'); return false;">$99.99</a>
+                        <a href="#" class="featurated-for-rent" onclick="submitForm('Headphones Testing'); return false;">$10.99</a>
                     </div>
 
                 </div>
@@ -274,8 +273,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$19.99</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
+                        <a href="#" class="featurated-for-buy" onclick="submitForm('Wearing Simulator'); return false;">$19.99</a>
+                        <a href="#" class="featurated-for-rent" onclick="submitForm('Wearing Simulator'); return false;">$1.99</a>
                     </div>
 
                 </div>
@@ -298,8 +297,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">Free</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
+                        <a href="#" class="featurated-for-buy" onclick="submitForm('Paladin'); return false;">Free</a>
+                        <a href="#" class="featurated-for-rent" onclick="submitForm('Paladin'); return false;">$1.99</a>
                     </div>
 
                 </div>
@@ -322,8 +321,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="" class="featurated-for-buy">$14.99</a>
-                        <a href="" class="featurated-for-rent">$1.99</a>
+                        <a href="#" class="featurated-for-buy" onclick="submitForm('Basketball'); return false;">$14.99</a>
+                        <a href="#" class="featurated-for-rent" onclick="submitForm('Basketball'); return false;">$1.99</a>
                     </div>
 
                 </div>
@@ -434,6 +433,20 @@
     </div>
 
 </div>
+
+<form action="ProductServlet" method="POST" id="priceForm" style="display: none;">
+    <input type="hidden" name="name_product" id="name_product">
+    <input type="hidden" name="COMMAND" id = "COMMAND">
+</form>
+
+<script>
+    function submitForm(name) {
+        document.getElementById('COMMAND').value = "VIEWPAGE"
+        document.getElementById('name_product').value = name;
+        document.getElementById('priceForm').submit();
+    }
+</script>
+
 </body>
 <jsp:include page="includes/mainFooterPage.jsp" />
 </html>

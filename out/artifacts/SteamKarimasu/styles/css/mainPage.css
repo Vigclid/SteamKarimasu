@@ -93,6 +93,7 @@ body{
 .item-price{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 
 }
 .item-price a{

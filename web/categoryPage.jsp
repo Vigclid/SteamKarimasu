@@ -87,11 +87,11 @@
                             <%
                                 if (p.getPrice() != 0){
                             %>
-                            <a href="" class="table-game-for-buy">$<%= p.getPrice() %></a>
+                            <a href="#" class="table-game-for-buy" onclick="submitForm('<%= p.getProductName() %>'); return false;">$<%= p.getPrice() %></a>
                             <%
                             } else {
                             %>
-                            <a href="" class="table-game-for-buy">Free</a>
+                            <a href="#" class="table-game-for-buy" onclick="submitForm('<%= p.getProductName() %>'); return false;">Free</a>
                             <%
                                 }
                             %>
@@ -117,6 +117,10 @@
 
 </div>
 
+<form action="ProductServlet" method="POST" id="priceForm" style="display: none;">
+    <input type="hidden" name="name_product" id="name_product">
+    <input type="hidden" name="COMMAND" id="COMMAND">
+</form>
 
 
 <script src="js/categoryPage.js">

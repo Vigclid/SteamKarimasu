@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 isSucess = false;
 
                 if (window.username.includes("Guest")){
-                    alert("Đăng nhập rồi thanh toán nha bạn.");
+                    alert("You must login to do payment!");
                 } else
                 // Update the <p> element with the selected values
                 if (amountDisplay) {

@@ -1,0 +1,172 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#rentOutListPage {
+    margin-top: 140px;
+    margin-bottom: 50px;
+}
+
+#rentOutListPage .add-edit-game{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#rentOutListPage .add-edit-game input{
+    width: 250px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    text-align: left;
+    justify-content: left;
+    padding-left: 50px;
+}
+
+#rentOutListPage .edit-game-button{
+    color: rgb(87, 137, 21);
+
+}
+
+#rentOutListPage .search-game-button{
+    color: white;
+}
+
+#rentOutListPage .add-game-button{
+    color: white;
+}
+
+#rentOutListPage .list-rent-game{
+    margin-top: 10px;
+    margin-left: 105px;
+}
+
+#rentOutListPage .rent-infor input{
+    border: none;
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+#rentOutListPage .game-information{
+    background-color: rgb(54, 51, 51);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 29px;
+    width: 288px;
+    padding-bottom: 29.5px;
+}
+
+#rentOutListPage .rent-out-list{
+
+    background-color: rgb(116, 186, 21);
+    width: 325px;
+    height: 38px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 20px;
+}
+
+#rentOutListPage .list-rent-game-table{
+    width: 619px;
+    height: 468px;
+    background-color: rgb(64, 61, 61);
+    color: white;
+    overflow-y: auto;
+    border-radius: 5px;
+    margin-bottom: 70px;
+}
+
+#rentOutListPage .list-rent-game-table::-webkit-scrollbar {
+    width: 9px;
+    background-color: rgb(54, 51, 51);
+    border-radius: 10px;
+}
+
+
+#rentOutListPage .list-rent-game-table::-webkit-scrollbar-thumb {
+    background-color: rgb(116, 186, 21);
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    transition: 0.8s ease;
+
+}
+
+#rentOutListPage .list-rent-game-table::-webkit-scrollbar-track {
+    background-color: rgb(54, 51, 51);
+    border-radius: 10px;
+}
+
+#rentOutListPage .list-rent-game-table::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(140, 222, 25);
+}
+
+#rentOutListPage .list-rent-game-table th{
+    border:1px solid rgb(91, 91, 91);
+}
+
+#rentOutListPage .list-rent-game-table td{
+    border: 1px solid rgb(91, 91, 91);
+}
+
+#rentOutListPage .list-rent-game-table th:first-child{
+    border-left: none;
+}
+
+#rentOutListPage .list-rent-game-table th:last-child{
+    border-right: none;
+}
+
+#rentOutListPage .list-rent-game-table td:first-child{
+    border-left: none;
+}
+
+#rentOutListPage .list-rent-game-table td:last-child{
+    border-right: none;
+}
+
+#rentOutListPage .list-rent-game-table table{
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#rentOutListPage .list-rent-game-table thead{
+    background-color: rgb(75, 73, 73);
+    position: sticky;
+    top: 0;
+}
+
+#rentOutListPage .confirm-rent-out-list{
+    margin-left: 250px;
+}
+
+#rentOutListPage .confirm-rent-out-list input{
+    width: 135px;
+    height: 50px;
+    background-color: rgb(116, 186, 21);
+    color: white;
+    border-radius: 50px;
+    font-size: 20px;
+    transition: 0.5s ease;
+    border: none;
+}
+
+#rentOutListPage .confirm-rent-out-list input:hover{
+    transform: scale(1.1);
+    background-color: rgb(143, 226, 26);
+}
+
+#rentOutListPage .delete-list{
+    border: none;
+    background: none;
+    color: white;
+    transition: 0.5s ease;
+}
+
+#rentOutListPage .delete-list:hover{
+    text-decoration: underline;
+}
