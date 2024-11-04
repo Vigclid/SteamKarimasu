@@ -1,0 +1,59 @@
+/* Basic Reset */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif; /* Use a clean font */
+    background-color: #1C1919; /* Light gray background */
+    color: #ffffff; /* Dark text color */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+}
+
+/* Container Styles */
+.error-container {
+    background-color: #1f1f1f; /* White background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 0px 10px 5px #8FE617;
+    padding: 20px; /* Padding inside the container */
+    max-width: 400px; /* Maximum width */
+    width: 90%; /* Responsive width */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 24px; /* Font size for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+    text-shadow: 0px 0px 10px #e67b17, 0px 0px 20px #fff;
+}
+
+/* Paragraph Styles */
+p {
+    margin-bottom: 20px; /* Space below the paragraph */
+    font-size: 16px; /* Font size for the paragraph */
+}
+
+/* Button Styles */
+input[type="submit"] {
+    background-color: #8FE617; /* Bootstrap primary color */
+    color: #1C1919; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside the button */
+    font-size: 16px; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Button Hover Effect */
+input[type="submit"]:hover {
+    background-color: #4e7d0d; /* Darker blue on hover */
+}
+

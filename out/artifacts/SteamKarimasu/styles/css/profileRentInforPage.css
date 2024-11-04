@@ -1,0 +1,174 @@
+body{
+    background-color: rgb(28, 25, 25) !important;
+}
+
+#profileRentInforPage{
+    margin-top: 140px;
+}
+
+#profileRentInforPage .user-img{
+    width: 218px;
+    height: 218px;
+    margin-right: 60px;
+}
+
+#profileRentInforPage .user-img img{
+    width: 100%;
+}
+
+#profileRentInforPage .user-infor{
+    color: white;
+    line-height: 60px;
+    margin-left: 36px;
+}
+
+
+#profileRentInforPage .game-renter{
+    font-size: 39px;
+}
+
+
+#profileRentInforPage .game-lender{
+    font-size: 39px;
+}
+
+
+#profileRentInforPage .user-function{
+    margin-top: 40px;
+}
+
+
+#profileRentInforPage .user-contact input{
+    background: none;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+#profileRentInforPage .main-information input{
+    color: rgb(109, 174, 21);
+}
+
+#profileRentInforPage .change-password input{
+
+}
+
+#profileRentInforPage .user-more-infor{
+    position: relative;
+    color: white;
+    height: 100px;
+    margin-top: 5px;
+}
+
+#profileRentInforPage .user-more-infor input{
+    width: 339px;
+    height: 40px;
+    background-color: rgb(54, 51, 51);
+    border: 0.2px solid rgb(93, 135, 32);
+    outline: none;
+}
+
+#profileRentInforPage .user-email{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+
+#profileRentInforPage .user-phone{
+    position: absolute;
+    top: 0%;
+    right: 10%;
+}
+
+
+#profileRentInforPage .user-date{
+    position: absolute;
+    bottom: 50%;
+    left: 0%;
+}
+
+#profileRentInforPage .payment-card{
+    margin-left: 298px;
+    color: white;
+    width: 1002px;
+    border-radius: 5px;
+}
+
+#profileRentInforPage .payment-card h3{
+    margin-top: 10px;
+    display: flex;
+    padding-left: 18px;
+
+}
+
+#profileRentInforPage .infor-card{
+    background-color: rgb(35, 34, 34);
+    margin: 0 20px;
+    height: 200px;
+    width: 893px;
+}
+
+#profileRentInforPage .items-infor-card{
+    margin: 20px;
+    display: flex;
+    position: relative;
+}
+
+#profileRentInforPage .img-game{
+    width: 299px;
+    height: 150px;
+}
+
+#profileRentInforPage .img-game img{
+    width: 100%;
+    height: 100%;
+}
+
+#profileRentInforPage .infor-game{
+    margin-left: 40px;
+}
+
+#profileRentInforPage .title{
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#profileRentInforPage .sub1{
+    font-size: 20px;
+    text-align: justify;
+    color: rgb(116, 186, 21);
+
+}
+
+#profileRentInforPage .sub2{
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+#profileRentInforPage .price{
+    position: absolute;
+    right: 0%;
+    bottom: -5%;
+}
+
+#profileRentInforPage .confirm input{
+    margin-left: 720px;
+    color: white;
+    margin-top: 130px;
+    margin-bottom: 80px;
+    width: 135px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(116, 186, 21);
+    transition: 0.5s ease;
+    border: none;
+}
+
+#profileRentInforPage .confirm input:hover{
+    background-color: rgb(143, 230, 23);
+    transform: scale(1.1);
+}

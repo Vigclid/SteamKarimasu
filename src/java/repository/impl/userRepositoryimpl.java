@@ -224,4 +224,32 @@ public class userRepositoryimpl implements userRepository {
     }
 
 
+    @Override
+    public int decreaseKcoin(float amount , int userId) {
+        String sql = "EXEC [dbo].[decreaseTotalAmount] @Userid= ? , @Amount = ?;";
+        ConnectDB db = ConnectDB.getInstance();
+        Connection con ;
+        try {
+            con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1,userId);
+            stmt.setFloat(2,amount);
+
+            stmt.executeQuery();
+
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e){
+            if (e.getErrorCode() == 50001){
+                return 50001;
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+        return 1;
+    }
 }

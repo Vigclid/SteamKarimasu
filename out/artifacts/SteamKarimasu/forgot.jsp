@@ -1,3 +1,12 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: hello
+  Date: 14/10/2024
+  Time: 2:01 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +22,7 @@
     <link rel="stylesheet" href="styles/css/forgotPage.css">
 </head>
 <body>
-<form action="" class="" acction="" method="POST">
+<form action="ResetPasword"  method="POST">
 
     <div class="container baseCard">
         <div class="row">
@@ -49,29 +58,21 @@
 
                 <div class="input_infor">
                     <label for="confirm_email"></label>
-                    <input type="text" name="confirm_email" value="" placeholder="Email or Phone Number">
+                    <input type="text" name="confirm_email" id="confirm_email"  placeholder="Email or Phone Number">
                 </div>
 
                 <div class="button_infor">
 
 
-                    <a class="back_page" href="loginPage.html">
+                    <a class="back_page" href="index.jsp">
                         <div>Back</div>
                     </a>
 
                     <input type="submit" class="find_email" value="Find">
 
-
-
-
                 </div>
             </div>
-
-
-
-
         </div>
-
     </div>
 
     <div class="container-s footer">
@@ -82,6 +83,7 @@
 
 </form>
 
+<p class="text-bg-danger">${mess}</p>
 
 </body>
 </html>

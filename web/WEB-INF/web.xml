@@ -17,6 +17,10 @@
         <servlet-name>SearchProduct</servlet-name>
         <servlet-class>controller.SearchProduct</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>controller.ProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -83,4 +87,21 @@
         <servlet-name>SearchProduct</servlet-name>
         <url-pattern>/SearchProduct</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
+
+
+<!--    ERROR HANDLE-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/includes/error_page/error500.jsp</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/includes/error_page/error404.jsp</location>-->
+<!--    </error-page>-->
+
+
 </web-app>

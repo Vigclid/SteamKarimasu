@@ -4,9 +4,22 @@
     <!--        <error-code>404</error-code>-->
     <!--        <location>/error_404.jsp</location>-->
     <!--    </error-page>-->
+    <!--    -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditGame</servlet-name>
+        <servlet-class>controller.EditGame</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchProduct</servlet-name>
+        <servlet-class>controller.SearchProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>controller.ProductServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -48,7 +61,7 @@
         <servlet-name>ChangePass</servlet-name>
         <url-pattern>/ChangePass</url-pattern>
     </servlet-mapping>
-<!--    -->
+    <!--    -->
     <servlet>
         <servlet-name>KcoinServlet</servlet-name>
         <servlet-class>controller.KcoinServlet</servlet-class>
@@ -57,4 +70,38 @@
         <servlet-name>KcoinServlet</servlet-name>
         <url-pattern>/KcoinServlet</url-pattern>
     </servlet-mapping>
+    <!--    -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditGame</servlet-name>
+        <url-pattern>/EditGame</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchProduct</servlet-name>
+        <url-pattern>/SearchProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
+
+
+<!--    ERROR HANDLE-->
+<!--    <error-page>-->
+<!--        <error-code>500</error-code>-->
+<!--        <location>/includes/error_page/error500.jsp</location>-->
+<!--    </error-page>-->
+<!--    <error-page>-->
+<!--        <error-code>404</error-code>-->
+<!--        <location>/includes/error_page/error404.jsp</location>-->
+<!--    </error-page>-->
+
+
 </web-app>
