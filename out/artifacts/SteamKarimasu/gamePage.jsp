@@ -171,7 +171,7 @@
                             Community
                         </div>
 
-                        <input type="submit" value="Join " onclick="submitForm('Basketball','Join'); return false;">
+                        <input type="submit" value="Join " onclick="submitForm('<%= product.getProductName() %>','Join'); return false;">
 
                     </div>
                 </div>
@@ -182,7 +182,7 @@
     </div>
 </div>
 
-<form action="ProductServlet" method="POST" id="priceForm" style="display: none;">
+<form  action="ProductServlet" method="POST" id="priceForm" style="display: none;">
     <input type="hidden" name="name_product" id="name_product">
     <input type="hidden" name="COMMAND" id="COMMAND">
 </form>

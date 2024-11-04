@@ -186,3 +186,30 @@ body{
 .button-link:hover {
     border-color: rgb(116, 186, 21);;
 }
+
+
+.pagination {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Adds some space between the pagination items */
+    margin: 20px 0; /* Optional: Adds space above and below the pagination */
+}
+
+.current-page {
+    color: black; /* Text color for the current page */
+    background-color: green; /* Background color for the current page */
+    padding: 5px 10px; /* Padding around the current page number */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.pagination a {
+    color: rgb(145, 255, 0); /* Text color for other pages */
+    text-decoration: none; /* Removes underline from links */
+    padding: 5px 10px; /* Padding around the page numbers */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.pagination a:hover {
+    background-color: lightgreen; /* Background color on hover for other pages */
+}

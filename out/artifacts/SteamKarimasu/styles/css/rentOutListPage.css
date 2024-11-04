@@ -46,7 +46,7 @@ body{
     border: none;
     color: white;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #rentOutListPage .game-information{
@@ -55,20 +55,25 @@ body{
     border-top-right-radius: 20px;
     height: 29px;
     width: 288px;
-    padding-bottom: 29.5px;
+    padding: 0 84px;
+    color: white;
+    text-decoration: none;
 }
 
 #rentOutListPage .rent-out-list{
-
+    padding: 0 97px;
     background-color: rgb(116, 186, 21);
     width: 325px;
     height: 38px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-size: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 #rentOutListPage .list-rent-game-table{
+    margin-top: 10px;
     width: 619px;
     height: 468px;
     background-color: rgb(64, 61, 61);

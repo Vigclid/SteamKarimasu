@@ -1,7 +1,8 @@
 <%@ page import="model.Entity.product" %>
 <%@ page import="common.LoginSession" %>
 <%@ page import="model.Entity.user" %>
-<%@ page import="repository.impl.ListRentRepositoryImpl" %><%--
+<%@ page import="repository.impl.ListRentRepositoryImpl" %>
+<%@ page import="repository.impl.ProductBillRepositoryImpl" %><%--
     Document   : buyGamePage
     Created on : Nov 2, 2024, 7:57:23 PM
     Author     : Admin
@@ -41,7 +42,7 @@
             checkError = false;
         }
         try {
-            checkError = new ListRentRepositoryImpl().checkUserHaveProduct(product.getProductId(), new LoginSession().getLoginSession(request).getUserId());
+            checkError = new ProductBillRepositoryImpl().checkUserHaveProduct(product.getProductId(), new LoginSession().getLoginSession(request).getUserId());
         } catch (Exception ignore){}
     %>
     <div class="row payment-card">
@@ -104,11 +105,17 @@
         <%
         } else {
         %>
-        <from action="mainPage.jsp">
             <div class="exit">
-                <input type="submit" value="Exit">
+                <a style="
+                    padding: 10px 20px;
+                    color: white;
+                    width: 100px;
+                    background-color:red;
+                    border-radius: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: bold; margin-left: 89%; margin-top: 10px; margin-bottom: 10px;" type="button" href="mainPage.jsp" value="Exit"> Exit </a>
             </div>
-        </from>
         <%
             }
         %>

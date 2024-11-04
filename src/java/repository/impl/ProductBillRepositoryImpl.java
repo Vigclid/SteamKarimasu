@@ -10,6 +10,18 @@ import java.sql.ResultSet;
 
 public class ProductBillRepositoryImpl implements ProductBillRepository {
     @Override
+    public void DeleteProductBillByProductId(int productId) {
+        String sql = "DELETE FROM productbill WHERE productid = " + productId;
+        try{
+            ConnectDB db = new ConnectDB();
+            Connection conn = db.openConnecion();
+            conn.createStatement().executeUpdate(sql);
+            conn.close();
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+    @Override
     public void addProductBill(int productID, int userID) {
         String sql = "INSERT INTO [dbo].[Productbill] (Userid, Productid) VALUES (?,?)";
         try {

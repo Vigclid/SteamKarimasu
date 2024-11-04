@@ -27,7 +27,7 @@
     <div class="side-bar" id="side-bar">
         <div class="side-bar-items">
             <a href="${pageContext.request.contextPath}/mainPage.jsp">Home</a>
-            <a href="${pageContext.request.contextPath}/categoryPage.jsp">Category</a>
+            <a href="${pageContext.request.contextPath}/CategoryServlet?page=1&command=Name">Category</a>
             <a href="#">Buy</a>
             <a href="#">Rent</a>
         </div>

@@ -19,12 +19,38 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String sortCriteria = request.getParameter("command");
-        List<product> products = new ProductsDAO().getProductsSortedBy(sortCriteria);
-        request.setAttribute("products",products);
+        int page = 1;
+        int pageSize = 10;
+        String sortCriteria = "Name";
 
-        request.getRequestDispatcher("categoryPage.jsp").include(request,response);
 
+        String pageParam = request.getParameter("page");
+        if (pageParam != null) {
+            page = Integer.parseInt(pageParam);
+        }
+
+        String commandParam = request.getParameter("command");
+        if (commandParam != null && !commandParam.isEmpty()) {
+            sortCriteria = commandParam;
+        }
+
+        ProductsDAO productDAO = new ProductsDAO();
+        List<product> products = productDAO.getProductsSortedBy(sortCriteria, page, pageSize);
+
+        int totalProducts = 0;
+        try {
+            totalProducts = productDAO.getTotalProducts();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        int totalPages = (int) Math.ceil((double) totalProducts / pageSize);
+
+        request.setAttribute("products", products);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPages", totalPages);
+        request.setAttribute("sortCriteria", sortCriteria);
+
+        request.getRequestDispatcher("categoryPage.jsp").forward(request, response);
     }
 
 }

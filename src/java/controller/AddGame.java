@@ -100,13 +100,13 @@ public class AddGame extends HttpServlet {
         if (nameGame.isEmpty() || gameDescription.isEmpty() || gameLink.isEmpty() || Price.isEmpty()
                 || nameGame == null || gameDescription == null || gameLink == null || Price == null) {
             out.println("<script>alert('Please fill in all fields!');</script>");
-            RequestDispatcher rd = request.getRequestDispatcher("AddGame.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("AddGamePage.jsp");
             rd.include(request, response);
         }
 
         if (check) {
             out.println("<script>alert('Game already exists!');</script>");
-            RequestDispatcher rd = request.getRequestDispatcher("AddGame.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("AddGamePage.jsp");
             rd.include(request, response);
         }
 

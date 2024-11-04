@@ -121,8 +121,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="#" class="trending-for-buy" onclick="submitForm('Brawlhalla'); return false;">$49.99</a>
-                        <a href="#" class="trending-for-rent" onclick="submitForm('Brawlhalla'); return false;">$5.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Brawlhalla'); return false;">Free</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('Brawlhalla'); return false;">$1.99</a>
                     </div>
 
                 </div>
@@ -145,8 +145,8 @@
                     </div>
 
                     <div class="item-price">
-                        <a href="#" class="trending-for-buy" onclick="submitForm('Sekiro'); return false;">$59.99</a>
-                        <a href="#" class="trending-for-rent" onclick="submitForm('Sekiro'); return false;">$7.99</a>
+                        <a href="#" class="trending-for-buy" onclick="submitForm('Sekiro: Shadows Die Twice'); return false;">$59.99</a>
+                        <a href="#" class="trending-for-rent" onclick="submitForm('SekSekiro: Shadows Die Twice'); return false;">$7.99</a>
                     </div>
 
                 </div>

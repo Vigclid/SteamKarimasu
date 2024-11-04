@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.Entity.product" %><%--
     Document   : rentGamePage
     Created on : Nov 2, 2024, 7:58:12 PM
     Author     : Admin
@@ -19,6 +19,12 @@
 <jsp:include page="includes/navBarPage.jsp" />
 <body>
 
+<%
+    product product = (product) request.getAttribute("profile_product");
+%>
+
+
+
 <div id="rentGamePage" class="container rentGamePage">
 
     <div class="row payment-card">
@@ -32,15 +38,15 @@
                 </div>
 
                 <div class="infor-game">
-                    <div class="title">Black Myth: Wukong</div>
+                    <div class="title"><%=product.getProductName()%></div>
 
                     <div class="sub-title">
                         <div class="sub1">Ready to join list: </div>
-                        <div class="sub2">Black Myth: Wukong</div>
+                        <div class="sub2"><%=product.getProductName()%></div>
                     </div>
                 </div>
 
-                <div class="price">1.99Kcoins</div>
+                <div class="price"><%=product.getPrice()%> Kcoins</div>
             </div>
         </div>
 

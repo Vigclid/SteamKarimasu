@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else
                 // Update the <p> element with the selected values
                 if (amountDisplay) {
-                    img.src = QR;
-                    img.alt = "Ma QR"
+                        img.src = QR;
+                        img.alt = "Ma QR"
                     document.querySelector('.deposit-qr').appendChild(img);
                     amountDisplay.innerHTML = `Your choice: ${CurrentAmount}`;
                 }

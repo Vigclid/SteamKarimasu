@@ -17,7 +17,7 @@ public class ReadFileUtils extends HttpServlet {
         int repIndex = imageUrl.indexOf("/images_product");
         String relativeImagePath = null;
         if(repIndex != -1) {
-            repIndex += "/images_product".length();
+            repIndex += "images_product".length();
             relativeImagePath = imageUrl.substring(repIndex);
         }
         ServletOutputStream outStream;

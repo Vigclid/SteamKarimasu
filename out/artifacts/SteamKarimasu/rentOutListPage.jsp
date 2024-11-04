@@ -1,4 +1,10 @@
-<%--
+<%@ page import="repository.impl.ProductRepositoryImpl" %>
+<%@ page import="model.Entity.product" %>
+<%@ page import="repository.impl.ListRentRepositoryImpl" %>
+<%@ page import="model.Entity.ListRent" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Entity.user" %>
+<%@ page import="repository.impl.userRepositoryimpl" %><%--
     Document   : rentOutListPage
     Created on : Oct 30, 2024, 11:35:58 PM
     Author     : Admin
@@ -22,28 +28,32 @@
 
     <div class="row">
 
-        <div class="col-3 add-edit-game">
+        <div class="col-3 add-edit-game" style="margin-left: 20px">
 
-            <input class="add-game-button" type="submit" value="Add Game" id="" name="">
-
-            <input class="search-game-button" type="submit" value="Search Game" id="" name="">
-
-            <input class="edit-game-button" type="submit" value="Edit Game" id="" name="">
+            <a class="add-game-button" type="submit" value="Add Game" style="color:white; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;" href="${pageContext.request.contextPath}/addGamePage.jsp"> Add Game</a>
+            <a class="search-game-button" type="submit" value="Edit Game" style="color: white; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;" href="${pageContext.request.contextPath}/searchGamePage.jsp"> Search Game</a>
+            <a class="edit-game-button" type="submit" value="Edit Game" style="color: rgb(109, 174, 21); cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;" href=""> Edit Game</a>
 
         </div>
 
         <div class="col-8 list-rent-game">
+            <% int id = Integer.parseInt(request.getParameter("id"));
+                product product = new ProductRepositoryImpl().findProductById(id);
+                if (product != null) {
+
+            %>
 
             <div class="rent-infor">
-                <input class="game-information" type="submit" value="Game Information" id="" name="">
+                <a href="${pageContext.request.contextPath}/editGamePage.jsp?id=<%=product.getProductId()%>" class="game-information">Game's Information</a>
 
-                <input class="rent-out-list" type="submit" value="Rent Out List" id="" name="">
+                <a  class="rent-out-list">Rent Out List</a>
             </div>
 
-
             <div class="list-rent-game-table">
+                <input type="hidden" name="id">
 
                 <table>
+
 
                     <thead>
 
@@ -56,19 +66,38 @@
                     </tr>
 
                     </thead>
+                    <%
+                        List<ListRent> rents = new ListRentRepositoryImpl().getListRent(product.getProductId());
+                        for (ListRent rent : rents){
+                            user user = new userRepositoryimpl().getUserByRentListId(rent.getListRentId());
 
+                    %>
                     <tbody>
 
                     <tr>
-                        <td>1</td>
-                        <td>Nguyen</td>
-                        <td>@gmail.com</td>
-                        <td>0123456789</td>
-                        <td><input class="delete-list" id="" type="submit" value="Delete"></td>
+                        <td><%=rent.getListRentId()%></td>
+                        <td><%=user.getUsername()%></td>
+                        <td><%=user.getEmail()%></td>
+                        <td><%=user.getPhoneNumber()%></td>
+                        <td>
+                            <%--                                    <a href="${pageContext.request.contextPath}/Delete.jsp?id=<%=rent.getListRentId()%> " style="text-decoration-color: white;color: white">Delete--%>
+                            <%--                                        <input type="hidden" value="<%=product.getProductId()%>">--%>
+                            <%--                                        <input type="submit">--%>
+                            <%--                                    </a>--%>
+                            <form action="${pageContext.request.contextPath}/Delete.jsp" method="post" style="display: inline;">
+                                <input type="hidden" name="rentId" value="<%= rent.getListRentId() %>">
+                                <input type="hidden" name="productId" value="<%= product.getProductId() %>">
+                                <button type="submit" style="background: none; border: none; color: white; text-decoration: underline; cursor: pointer;">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                        <%--                                <td><input class="delete-list" id="" type="submit" value="Delete"></td>--%>
                     </tr>
-
-
-
+                    <%
+                            }
+                        }
+                    %>
                     </tbody>
 
                 </table>
@@ -76,9 +105,6 @@
 
             </div>
 
-            <div class="confirm-rent-out-list">
-                <input type="submit" value="Confirm" class="" name="" value="">
-            </div>
 
         </div>
 

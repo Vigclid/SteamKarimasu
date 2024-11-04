@@ -14,11 +14,6 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-  </script>
-
   <link rel="stylesheet" href="styles/css/addGamePage.css">
 </head>
 <jsp:include page="includes/navBarPage.jsp" />
@@ -53,11 +48,7 @@
           <div class="upload-box" id="uploadBox">
             <input class="plus-button" id="mainPlusButton" style="width: 50px; height: 50px;">
             <input type="file" id="mainFileInput" accept="image/*" name="file-img" multiple>
-            <img id="mainPreviewImage" class="game-img" src="#"  width="100%" height="100%" />
-          </div>
-
-          <div class="thumbnail-container" id="thumbnailContainer">
-
+            <img id="mainPreviewImage" class="game-img" src="#"  width="620px" height="380px%" />
           </div>
 
         </div>
@@ -82,7 +73,7 @@
         </div>
 
         <div class="confirm-add-game">
-          <input type="submit" value="Update">
+          <input type="submit" value="Confirm">
         </div>
 
 
