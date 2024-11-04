@@ -252,4 +252,35 @@ public class userRepositoryimpl implements userRepository {
         }
         return 1;
     }
+
+
+    @Override
+    public user getUserByRentListId(int listId) {
+        String sql = "SELECT * FROM [dbo].[Users] u JOIN [dbo].[ListRent] rl ON u.Userid = rl.Userid WHERE rl.idList = ?" ;
+        try{
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setInt(1, listId);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                user user = new user();
+                user.setUserId(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setDob(rs.getString(4));
+                user.setActive(rs.getByte(5));
+                user.setPassword(rs.getString(6));
+                user.setPhoneNumber(rs.getString(7));
+                user.setTotalAmount(rs.getFloat(8));
+                return user;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -117,6 +117,27 @@
 
 </div>
 
+
+
+<div class="pagination">
+    <%
+        int currentPage = (int) request.getAttribute("currentPage");
+        int totalPages = (int) request.getAttribute("totalPages");
+        String sortCriteria = request.getParameter("command");
+
+
+    %>
+    <% for (int i = 1; i <= totalPages; i++) { %>
+    <% if (i == currentPage) { %>
+    <span class="current-page"><%= i %></span>
+    <% } else { %>
+    <a href="CategoryServlet?page=<%= i %>&command=<%= sortCriteria %>"><%= i %></a>
+    <% } %>
+    <% } %>
+</div>
+
+
+
 <form action="ProductServlet" method="POST" id="priceForm" style="display: none;">
     <input type="hidden" name="name_product" id="name_product">
     <input type="hidden" name="COMMAND" id="COMMAND">

@@ -23,6 +23,16 @@ public class ProductDTO {
         this.userId = userId;
     }
 
+    public ProductDTO(int idProduct, String nameProduct, String imageProduct, String productDescription, String DateCreated ,String linkKeyProduct, String priceForBuyProduct) {
+        this.idProduct = idProduct;
+        this.nameProduct = nameProduct;
+        this.priceForBuyProduct = priceForBuyProduct;
+        this.productDescription = productDescription;
+        this.imageProduct = imageProduct;
+        this.linkKeyProduct = linkKeyProduct;
+        this.DateCreated = DateCreated;
+    }
+
     public int getIdProduct() {
         return idProduct;
     }

@@ -18,7 +18,9 @@
     padding: 0;
     margin: 0;
     outline: none;
+    margin-right: 260px;
     box-shadow: none;
+
     background-color: rgb(54, 51, 51);
     z-index: 1001;
     transition: 0.5s ease;
@@ -271,3 +273,6 @@
 .button-link:hover {
     border-color: rgb(116, 186, 21);;
 }
+
+
+

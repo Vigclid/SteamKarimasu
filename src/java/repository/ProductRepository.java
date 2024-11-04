@@ -12,5 +12,7 @@ public interface ProductRepository {
     product findProductById(int id);
     product findProductByName(String name);
     List<product> ListProduct();
+    public void deleteProductById(int id);
+    public void updateProduct(ProductDTO productDTO);
 
 }

@@ -209,6 +209,14 @@ body{
     width: 100px;
     background: linear-gradient(to right, rgb(54, 87, 9), rgb(109, 176, 19));
     color: white;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+#join-rent .more-infor-buy input:hover{
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(109, 176, 19), rgb(54, 87, 9));
+    color: white;
 }
 
 
@@ -298,8 +306,15 @@ body{
     width: 100px;
     background: linear-gradient(to right, rgb(61, 9, 98), rgb(123, 17, 199));
     color: white;
+    transition: background 0.3s ease, border 0.3s ease;
 }
-
+#join-rent .more-infor-rent-it-out input:hover {
+    border-radius: 5px;
+    border: 3px solid rgb(28, 25, 25);
+    width: 100px;
+    background: linear-gradient(to right, rgb(123, 17, 199), rgb(61, 9, 98));
+    color: white;
+}
 #join-rent .body-game-page{
     margin-bottom: 120px;
 }

@@ -1,9 +1,9 @@
 <%@ page import="model.Entity.user" %>
-<%@ page import="repository.impl.userRepositoryimpl" %>
 <%@ page import="repository.impl.UserRoleRepositoryImpl" %>>
 <%@ page import="repository.impl.RoleRepositoryImpl" %>
-<%@ page import="model.Entity.user" %>
-
+<%@ page import="common.LoginSession" %>
+<%@ page import="static db.DatabaseInfo.user" %>
+>
 <%--
     Document   : profilePage
     Created on : Oct 25, 2024, 8:09:29 PM
@@ -16,9 +16,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
-    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/css/profilePage.css">
-    <base href="/web/">
+
 </head>
 <jsp:include page="includes/navBarPage.jsp" />
 <body>
@@ -32,20 +33,16 @@
         </div>
         <div class="col-9 user-infor">
             <table>
-                <% HttpSession httpSession = request.getSession(false);
-                    if (httpSession != null) {
-                        UserRoleRepositoryImpl userRoleRepository = new UserRoleRepositoryImpl();
-                        RoleRepositoryImpl roleRepository = new RoleRepositoryImpl();
-                        Object userName = httpSession.getAttribute("username");
-                        userRepositoryimpl repositoryimpl = new userRepositoryimpl();
-                        user user = repositoryimpl.findUserbyName((String) userName);
-                        int userRole = userRoleRepository.findRoleIdbyUserId(user. getUserId());
-                        String roleName = roleRepository.findRoleById(userRole);
-
+                <%
+                    UserRoleRepositoryImpl userRoleRepository = new UserRoleRepositoryImpl();
+                    RoleRepositoryImpl roleRepository = new RoleRepositoryImpl();
+                    user user = new LoginSession().getLoginSession(request);
+                    int userRole = userRoleRepository.findRoleIdbyUserId(user.getUserId());
+                    String roleName = roleRepository.findRoleById(userRole);
                 %>
                 <tbody>
                 <tr class="name">
-                    <td>Name: </td>
+                    <td style="padding-right: 30px;">Name: </td>
                     <td><%= user.getUsername() %></td>
                 </tr>
 
@@ -70,11 +67,11 @@
         <div class="col-3 user-contact">
 
             <div class="main-information">
-                <input type="submit" value="Main Information" class="" id="" name="">
+                <a class="input-profile" href="profilePage.jsp"> Main Information</a>
             </div>
 
             <div class="change-password">
-                <input type="submit" value="Change Password" class="" id="" name="">
+                <a class="input-changePass" href="changePassPage.jsp"> Change Password </a>
             </div>
 
         </div>
@@ -85,19 +82,19 @@
 
                 <div class="user-email">
                     <div class="email">Email</div>
-                    <input class="input-email" type="text" value="<%=user.getEmail() %>" readonly>
+                    <input class="input" type="text" value="<%=user.getEmail() %>" readonly>
                 </div>
 
                 <div class="user-phone">
                     <div class="email">Phone Number</div>
-                    <input class="input-phone" type="text" value="<%=user.getPhoneNumber()%>" readonly>
+                    <input class="input" type="text" value="<%=user.getPhoneNumber()%>" readonly>
                 </div>
 
                 <div class="user-date">
                     <div class="date">Date</div>
-                    <input class="input-date" type="text" value="<%=user.getDob()%>" readonly>
+                    <input class="input" type="text" value="<%=user.getDob()%>" readonly>
                 </div>
-                <%}%>
+
             </div>
 
         </div>

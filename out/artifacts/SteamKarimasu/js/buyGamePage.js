@@ -1,3 +1,4 @@
+
 function handleConfirm(event) {
     event.preventDefault();
     if (window.username.includes("Guest")) {

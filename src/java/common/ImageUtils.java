@@ -11,20 +11,21 @@ import java.util.Base64;
 
 public class ImageUtils {
 
-    public void saveThumbnail(ProductDTO productDTO, product productEntity) {
-        String basePath = "C:\\Users\\Admin\\Documents\\Github\\SteamKarimasu\\web\\assets\\images_product";
-        String entityFolder = "/images_product/";
-        String path = entityFolder + productDTO.getImageProduct();
+    public product saveThumbnail(ProductDTO productDTO, product productEntity) {
+        String basePath = "C:\\Users\\Admin\\Documents\\Github\\SteamKarimasu\\web\\assets";
+        String entityFolder = "\\images_product\\";
+        String path = basePath +  entityFolder + productDTO.getImageProduct();
 
         // Ensure the entity folder exists; create it if not
         createDirectoryIfNotExists(basePath + entityFolder);
 
         // Save the image if base64 data is provided
         if (productDTO.getImageBase64() != null) {
-            deleteOldImageIfExists(productDTO.getImageProduct(), basePath);
-            saveNewImage(productDTO.getImageBase64(), basePath + path);
+//            deleteOldImageIfExists(productDTO.getImageProduct(), basePath);
+            saveNewImage(productDTO.getImageBase64(),  path);
             productEntity.setProductImage(path);  // Assuming setImagePath() is used to store the image path
         }
+        return  productEntity;
     }
 
     private void deleteOldImageIfExists(String imagePath, String basePath) {

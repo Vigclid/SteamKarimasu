@@ -147,13 +147,7 @@ body{
     transition: background 0.3s ease, border 0.3s ease;
 }
 
-#game .more-infor-buy input:hover{
-    border-radius: 5px;
-    border: 3px solid rgb(28, 25, 25);
-    width: 100px;
-    background: linear-gradient(to right, rgb(109, 176, 19), rgb(54, 87, 9));
-    color: white;
-}
+
 
 
 #game .rent-game{

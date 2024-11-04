@@ -84,6 +84,8 @@ public class ProductServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
 
         String command = request.getParameter("COMMAND");
+
+
         switch (command) {
             case "VIEWPAGE": {
                 viewGamePage(request,response, command);
@@ -105,6 +107,10 @@ public class ProductServlet extends HttpServlet {
                 viewJoinPage(request,response);
                 break;
             }
+            case "Join List":{
+                joinList(request,response);
+                break;
+            }
         }
 
     }
@@ -114,6 +120,11 @@ public class ProductServlet extends HttpServlet {
      *
      * @return a String containing servlet description
      */
+    void joinList(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        product product = new ProductRepositoryImpl().findProductByName(request.getParameter("name_product"));
+        request.setAttribute("profile_product",product);
+        request.getRequestDispatcher("rentGamePage.jsp").include(request,response);
+    }
     void viewGamePage(HttpServletRequest request, HttpServletResponse response , String command) throws ServletException, IOException  {
 
         product product = new ProductRepositoryImpl().findProductByName(request.getParameter("name_product"));

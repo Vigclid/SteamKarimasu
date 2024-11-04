@@ -14,4 +14,6 @@ public interface userRepository {
     void increaseKcoin(float amount , int userId);
 
     int decreaseKcoin(float amount , int userId);
+
+    public user getUserByRentListId(int listId);
 }

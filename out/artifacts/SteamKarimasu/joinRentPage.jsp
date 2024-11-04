@@ -1,4 +1,13 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="model.Entity.product" %>
+<%@ page import="common.LoginSession" %>
+<%@ page import="model.Entity.user" %>
+<%@ page import="model.Entity.ListRent" %>
+<%@ page import="repository.impl.ListRentRepositoryImpl" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="repository.impl.UserRoleRepositoryImpl" %>
+<%@ page import="repository.impl.userRepositoryimpl" %><%--
     Document   : joinRentPage
     Created on : Oct 24, 2024, 1:17:20 PM
     Author     : Admin
@@ -17,15 +26,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="styles/css/joinRentPage.css">
 </head>
 <jsp:include page="includes/navBarPage.jsp" />
 <body>
 <!-- navBar -->
+<%
+    // Tạo đối tượng LoginSession và lấy username từ session
+    LoginSession loginSession = new LoginSession();
+    user loggedInUser = loginSession.getLoginSession(request);
+    String username = (loggedInUser != null) ? loggedInUser.getUsername() : "Guest";
+
+
+
+    product product = (product) request.getAttribute("profile_product");
+
+
+
+%>
+<script>
+    window.username = "<%= username%>"
+</script>
 
 <div class="container game" id="join-rent">
 
     <div class="row game-title">
-        Black Myth: Wukong
+        <%= product.getProductName() %>
     </div>
 
     <div class="row advertisement">
@@ -39,6 +65,15 @@
         <div class="col-7 rent-it-out-list">
 
             <div class="rent-it-out-list-table">
+                <%
+                    List<ListRent> listRentList = new ListRentRepositoryImpl().getListRent(product.getProductId());
+                    userRepositoryimpl userRepositoryimpl = new userRepositoryimpl();
+                    List<user> userList = new ArrayList<>();
+                    for (ListRent listRent : listRentList){
+                        userList.add(userRepositoryimpl.getUserByRentListId(listRent.getListRentId()));
+                    }
+                    request.setAttribute("userList",userList);
+                %>
                 <table>
                     <thead>
                     <tr>
@@ -49,69 +84,61 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>gyggyggy</td>
-                        <td>uhhuhuhuuh</td>
-                        <td>huuhhuuhu</td>
-                        <td><input class="Rent" type="submit" value="Rent"></td>
-                    </tr>
+                    <c:forEach var="u" items="${userList}">
+                        <tr>
+                            <td>${u.getUserId()}</td>
+                            <td>${u.getUsername()}</td>
+                            <td>${u.getPhoneNumber()}</td>
+                            <td>
+                                <form onsubmit="handleConfirm(event)" action="ProductServlet" method="post">
+                                    <input type="hidden" value="${u.getUserId()}" name="renter">
+                                    <input class="Rent" type="submit" value="Rent" name="COMMAND">
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
 
                     </tbody>
 
                 </table>
             </div>
+            <form onsubmit="handleConfirm(event)" action="ProductServlet" method="post">
+                <div class="join-rent-but">
+                    <input type="submit" name="COMMAND" value="Join List" >
+                </div>
+            </form>
 
-            <div class="join-rent-but">
-                <input type="submit" name="" value="Join List" >
-            </div>
 
         </div>
 
         <div class="col-5 game-about">
 
             <div class="row about-img">
-                <img src="assets/img_game_page/about_game_img.png" alt="">
+                <img src="<%= request.getContextPath() + "/" + product.getProductImage().replace("C:\\Users\\Admin\\Documents\\Github\\SteamKarimasu\\web\\", "") %>" alt="">
             </div>
 
             <div class="row about-content">
-                <p>Black Myth: Wukong is an action RPG rooted in Chinese mythology. You shall set out as the
-                    Destined One to venture into the challenges and marvels ahead, to uncover the obscured truth
-                    beneath the veil of a glorious legend from the past.</p>
+                <p><%= product.getProdcuctDescription()%></p>
             </div>
 
 
             <div class="row buy-game">
                 <div class="buy-card">
 
-                    <div class="buy-card-title">Buy Black Myth: Wukong</div>
+                    <div class="buy-card-title">Buy <%= product.getProductName() %></div>
 
                     <div class="more-infor-buy">
                         <div class="buy-price">
-                            $49.99
+                            $<%= product.getPrice() %>
                         </div>
 
-                        <input type="submit" value="Purchase" class="" id="">
+                        <input type="submit" value="Purchase" onclick="submitForm('Purchase'); return false;">
 
                     </div>
                 </div>
             </div>
 
-
-            <!-- <div class="row rent-game">
-                <div class="rent-card">
-
-                    <div class="rent-card-title">Rent Black Myth: Wukong</div>
-
-                    <div class="more-infor-rent">
-                        <div class="rent-price">
-                            $4.99
-                        </div>
-
-                        <input type="submit" value="Rent" class="" id="">
-
-                    </div>
-                </div>
-            </div> -->
 
 
             <div class="row rent-it-out">
@@ -124,7 +151,7 @@
                             Community
                         </div>
 
-                        <input type="submit" value="Join " class="" id="">
+                        <input type="submit" value="Join" onclick="submitForm('Join'); return false;">
 
                     </div>
                 </div>
@@ -135,9 +162,26 @@
     </div>
 </div>
 
+<form  action="ProductServlet" method="POST" id="priceForm" style="display: none;">
+    <input type="hidden" name="name_product" id="name_product" value="<%=product.getProductName()%>">
+    <input type="hidden" name="COMMAND" id="COMMAND">
+</form>
 
 <!-- footer -->
 
+
+<!-- footer -->
+<script>
+        function submitForm(command) {
+            document.getElementById('COMMAND').value = command
+            document.getElementById('priceForm').submit();
+        }
+
+</script>
+
+<script src="js/joinRentPage.js">
+
+</script>
 </body>
 <jsp:include page="includes/mainFooterPage.jsp" />
 </html>
