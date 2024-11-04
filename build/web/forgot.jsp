@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="css/forgotPage.css">
 </head>
 <body>
-<form action="" class=""  method="POST">
 
     <div class="container baseCard">
         <div class="row">
+            <form method="Post" action="LoginServlet">
             <div class="col navCard">
                 <div class="logo_nav">
                     <img src="assets/img/smallogo.png" alt="">
@@ -45,10 +45,10 @@
                     </div>
 
                     <input type="submit" class="login_card" value="Login">
-
-
                 </div>
             </div>
+            </form>
+
 
             <div class="col get_back_accout_card">
                 <div class="title_infor">
@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="input_infor">
-<%--                    <label for="confirm_email"></label>--%>
-                    <input type="text" name="confirm_email" value="" placeholder="Email or Phone Number">
+                    <label for="confirm_email"></label>
+                    <input type="text" name="confirm_email" id="confirm_email"  placeholder="Email or Phone Number">
                 </div>
 
                 <div class="button_infor">
@@ -67,30 +67,23 @@
                     <a class="back_page" href="index.jsp">
                         <div>Back</div>
                     </a>
-
+                    <form action="ResetPasword" method="post">
                     <input type="submit" class="find_email" value="Find">
-
-
-
-
+                    </form>
                 </div>
             </div>
-
-
-
-
         </div>
 
     </div>
-
     <div class="container-s footer">
         <div class="row">
 
         </div>
     </div>
 
-</form>
 
+
+<p class="text-bg-danger">${mess}</p>
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 <%@ page import="common.LoginSession" %>
-<%@ page import="model.Entity.User" %><%--
+<%@ page import="model.Entity.User" %>
+<%@ page import="model.repository.userRoleRepository" %>
+<%@ page import="model.repository.impl.userRoleRepositoryImpl" %><%--
     Document   : navBarPage
     Created on : Oct 21, 2024, 12:08:59 PM
     Author     : Admin
@@ -41,8 +43,10 @@
             <div class="navbar-search">
                 <input type="text" name="search" placeholder="Search">
             </div>
-            <!-- Conditionally rendered login button -->
-            <% User user = new LoginSession().getLoginSession(request);
+            <%  LoginSession loginSession = new LoginSession();
+                User user = loginSession.getLoginSession(request);
+                userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();
+
             if (user == null){
 
             %>
@@ -63,7 +67,7 @@
                             <img src="${pageContext.request.contextPath}/assets/img/ARK.png" alt="User">
                         </div>
                         <div class="accout-name"><%= user.getUsername() %></div>
-                        <div class="accout-role"><%= new LoginSession().getRoleNameUser(request)%></div>
+                        <div class="accout-role"><%= loginSession.getRoleNameUser(request)%></div>
                         <div class="accout-kcoins">
                             <input class="kcoins" type="text" value="<%= user.getTotalAmount()%>" readonly>
                         </div>
@@ -85,13 +89,16 @@
                                 <a href="yourLogoutLink" class="button-link">LogOut</a>
                             </div>
                         </div>
+                        <% int id = userRoleRepository.findRoleIdbyUserId(user.getUserid());
+                            if(id == 1) {
 
+                        %>
                         <div class="row feature">
-                            <div class="col-12 text-bg-danger">
-                                <a href="yourNewsLink" class="button-link">News</a>
+                            <div class="col-12 ">
+                                <a href="${pageContext.request.contextPath}/searchGamePage.jsp" class="button-link" style="background-color: rgb(222, 81, 25);">Manage</a>
                             </div>
                         </div>
-
+                        <%}%>
                     </div>
                 </div>
 

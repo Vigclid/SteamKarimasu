@@ -193,6 +193,35 @@ public class userRepositoryimpl implements userRepository {
         return null ;
     }
 
+    @Override
+    public User getUserByRentListId(int listId) {
+        String sql = "SELECT u.* FROM users u JOIN listrent rl ON u.Userid = rl.Userid WHERE rl.idList =" + listId ;
+        try{
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                User user = new User();
+                user.setUserid(rs.getInt(1));
+                user.setUsername(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setDob(rs.getString(4));
+                user.setActive(rs.getByte(5));
+                user.setPass(rs.getString(6));
+                user.setPhonenumber(rs.getString(7));
+                user.setTotalAmount(rs.getFloat(8));
+                return user;
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public void updateUserPassword(User user) {
         String sql = " UPDATE users SET Pass =? WHERE Userid = " + user.getUserid();
         ConnectDB db = ConnectDB.getInstance();

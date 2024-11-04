@@ -42,6 +42,24 @@
         <url-pattern>/AddGame</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ResetPasword</servlet-name>
+        <servlet-class>controller.ResetPasword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetPasword</servlet-name>
+        <url-pattern>/ResetPasword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditGame</servlet-name>
+        <servlet-class>controller.EditGame</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditGame</servlet-name>
+        <url-pattern>/EditGame</url-pattern>
+    </servlet-mapping>
+
     <error-page>
         <error-code>404</error-code>
         <location>/</location>

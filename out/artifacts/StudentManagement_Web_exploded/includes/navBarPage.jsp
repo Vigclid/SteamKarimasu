@@ -43,7 +43,6 @@
             <div class="navbar-search">
                 <input type="text" name="search" placeholder="Search">
             </div>
-            <!-- Conditionally rendered login button -->
             <%  LoginSession loginSession = new LoginSession();
                 User user = loginSession.getLoginSession(request);
                 userRoleRepositoryImpl userRoleRepository = new userRoleRepositoryImpl();

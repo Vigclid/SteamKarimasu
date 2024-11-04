@@ -149,5 +149,44 @@ public class ProductRepositoryImpl implements ProductRepository {
         return null;
     }
 
+    @Override
+    public void updateProduct(ProductDTO productDTO) {
+        String sql = "UPDATE products SET Productname =?, Productimage =?, ProductDescription =?, Dateofupdate =?,LinkKeyGame =? , Price =? where Productid =?";
+        try {
+            Product product = new ProductConverter().convertProductDTOToProductEntity(productDTO);
+            new ImageUtils().saveThumbnail(productDTO,product);
+            ConnectDB conn = new ConnectDB();
+            Connection con = conn.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, product.getProductName());
+            stmt.setString(2, product.getProductImage());
+            stmt.setString(3, product.getDescription());
+            stmt.setString(4, product.getDateOfUpdate());
+            stmt.setString(5, product.getLinkKeyGame());
+            stmt.setFloat(6, product.getPrice());
+            stmt.setInt(7, product.getProductId());
+            stmt.executeUpdate();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteProductById(int id) {
+        String sql = "DELETE from products WHERE Productid =" + id ;
+        try {
+            ConnectDB db = new ConnectDB();
+            Connection con = db.openConnecion();
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.execute();
+            stmt.close();
+            con.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

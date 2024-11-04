@@ -1,4 +1,5 @@
-<%-- 
+<%@ page import="model.Entity.Product" %>
+<%@ page import="model.repository.impl.ProductRepositoryImpl" %><%--
     Document   : addGamePage
     Created on : Oct 26, 2024, 11:12:29 PM
     Author     : Admin
@@ -23,14 +24,13 @@
 
             <div class="col-3 add-edit-game">
 
-                <a class="add-game-button" type="submit" value="Add Game" style="color: rgb(109, 174, 21); cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;"> Add Game</a>
+                <a class="add-game-button" type="submit" value="Add Game" style="color: rgb(109, 174, 21); cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;" href="${pageContext.request.contextPath}/addGamePage.jsp" > Add Game</a>
 
-                <a class="edit-game-button" type="submit" value="Edit Game" style="color: white; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;"> Edit Game </a>
+                <a class="edit-game-button" type="submit" value="Edit Game" style="color: white; cursor: pointer;text-decoration: none;font-size: 30px;margin-top: 10px;" href="${pageContext.request.contextPath}/searchGamePage.jsp"> Search Game</a>
 
             </div>
 
             <div class="col-8 add-game-table">
-
                 <div class="game-infor">
                     <input class="game-information" type="submit" value="Game Information"  name="">
                 </div>
@@ -45,13 +45,9 @@
                     <div class="game-img" >Game's Image</div>
 
                     <div class="upload-box" id="uploadBox">
-                        <input class="plus-button" id="mainPlusButton" style="width: 50px; height: 50px; margin-bottom: 25px; margin-right: 5px">
-                        <input type="file" id="mainFileInput" accept="image/*">
-                        <img id="mainPreviewImage" class="game-img" src="#" alt="Preview" width="20px" height="20px" />
-                      </div>
-                      
-                      <div class="thumbnail-container" id="thumbnailContainer">
-                          
+                        <input class="plus-button" id="mainPlusButton" style="width: 50px; height: 50px;">
+                        <input type="file" id="mainFileInput" accept="image/*" name="file-img" multiple>
+                        <img id="mainPreviewImage" class="game-img" src="#"  width="100%" height="100%" />
                       </div>
 
                 </div>
@@ -75,10 +71,10 @@
 
                 </div>
 
-
                 <div class="confirm-add-game">
-                    <input type="submit" value="Confirm">
+                    <input type="submit" value="Update">
                 </div>
+
 
             </div>
 

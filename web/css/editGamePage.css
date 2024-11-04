@@ -10,7 +10,7 @@ body{
 #editGamePage .add-edit-game{
     display: flex;
     flex-direction: column;
-    
+
 }
 
 #editGamePage .add-edit-game input{
@@ -26,7 +26,7 @@ body{
 
 #editGamePage .edit-game-button{
     color: rgb(87, 137, 21);
-   
+
 }
 
 #editGamePage .search-game-button{
@@ -45,31 +45,36 @@ body{
 #editGamePage .rent-infor input{
     border: none;
     color: white;
-    
+
     margin-bottom: 20px;
 }
 
 #editGamePage .game-information{
+    padding: 0 90px;
     width: 325px;
     height: 38px;
     background-color: rgb(116, 186, 21);
     font-size: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 #editGamePage .rent-out-list{
-    padding-bottom: 29.5px;
+    padding: 0 84px;
     background-color: rgb(54, 51, 51);
     height: 29px;
     width: 288px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 #editGamePage .edit-game-name{
     margin-bottom: 20px;
-}   
+}
 
 #editGamePage .game-name{
     margin-bottom: 20px;
@@ -116,36 +121,36 @@ body{
 }
 
 #editGamePage .preview {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 #editGamePage .thumbnail-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 #editGamePage .thumbnail-box {
-  width: 144px;
-  height: 75px;
-  border: 2px solid rgb(116, 186, 21);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: rgb(54, 51, 51);
+    width: 144px;
+    height: 75px;
+    border: 2px solid rgb(116, 186, 21);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: rgb(54, 51, 51);
 }
 
 #editGamePage .thumbnail-box img {
-  width: 100%;
-  height: 100%;
-  display: block;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 #editGamePage .edit-game-description{
@@ -170,28 +175,28 @@ body{
 }
 
 #editGamePage .input-game-description::-webkit-scrollbar {
-    width: 8px; 
-    background-color: rgb(54, 51, 51); 
-    border-radius: 10px; 
+    width: 8px;
+    background-color: rgb(54, 51, 51);
+    border-radius: 10px;
 }
 
 #editGamePage .input-game-description::-webkit-scrollbar-thumb {
-    background-color: rgb(116, 186, 21); 
+    background-color: rgb(116, 186, 21);
     border-radius: 10px;
-    border: 3px solid transparent; 
-    background-clip: padding-box; 
+    border: 3px solid transparent;
+    background-clip: padding-box;
     transition: 0.8s ease;
-    
+
 
 }
 
 #editGamePage .input-game-description::-webkit-scrollbar-track {
-    background-color: rgb(39, 36, 36); 
-    border-radius: 10px; 
+    background-color: rgb(39, 36, 36);
+    border-radius: 10px;
 }
 
 #editGamePage .input-game-description::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(140, 222, 25); 
+    background-color: rgb(140, 222, 25);
 }
 
 

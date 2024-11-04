@@ -11,4 +11,6 @@ public interface ProductRepository {
     List<Product> ListProduct();
     Product findProductById(int id);
     Product findProductByName(String name);
+    void updateProduct(ProductDTO productDTO);
+    void deleteProductById(int id);
 }

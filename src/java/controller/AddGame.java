@@ -116,7 +116,7 @@ public class AddGame extends HttpServlet {
         else {
             productRepository.addProduct(productDTO);
             out.println("<script>alert('Game added successfully!');</script>");
-            RequestDispatcher rd = request.getRequestDispatcher("ListGame.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("searchGamePage.jsp");
             rd.include(request, response);
         }
 

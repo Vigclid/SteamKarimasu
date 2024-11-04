@@ -9,6 +9,7 @@ public class ProductConverter {
 
     public Product convertProductDTOToProductEntity(ProductDTO productDTO) {
         Product product = new Product();
+        product.setProductId(productDTO.getIdProduct());
         product.setProductName(productDTO.getNameProduct());
         product.setDescription(productDTO.getProductDescription());
         product.setPrice(Float.parseFloat(productDTO.getPriceForBuyProduct()));

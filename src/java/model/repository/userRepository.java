@@ -11,4 +11,5 @@ public interface userRepository {
     byte LoginCheck(String username, String password);
     User findUserbyName(String name);
     User findUserByEmail(String email);
+    User getUserByRentListId(int listId);
 }

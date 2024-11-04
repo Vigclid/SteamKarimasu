@@ -47,11 +47,7 @@
                     <div class="upload-box" id="uploadBox">
                         <input class="plus-button" id="mainPlusButton" style="width: 50px; height: 50px;">
                         <input type="file" id="mainFileInput" accept="image/*" name="file-img" multiple>
-                        <img id="mainPreviewImage" class="game-img" src="#"  width="100%" height="100%" />
-                      </div>
-                      
-                      <div class="thumbnail-container" id="thumbnailContainer">
-                          
+                        <img id="mainPreviewImage" class="game-img" src="#"  width="620px" height="380px%" />
                       </div>
 
                 </div>
