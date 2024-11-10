@@ -51,7 +51,7 @@
 <div class="container game" id="join-rent">
 
     <div class="row game-title">
-        <%= product.getProductName() %>
+            <%= product.getProductName() %>
     </div>
 
     <div class="row advertisement">
