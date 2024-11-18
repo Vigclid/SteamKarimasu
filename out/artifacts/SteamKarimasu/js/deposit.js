@@ -82,7 +82,8 @@ async function checkPaid(price,content){
             const response = await fetch(App_Script);
             const data = await response.json();
             const lastPaid = data.data[data.data.length - 1];
-            lastPrice = lastPaid["  Giá trị"];
+            console.log(lastPaid);
+            lastPrice = lastPaid["Giá trị"];
             lastContent = lastPaid["Mô tả"];
 
             console.log("lastPrice: "+lastPrice + ", lastContent: "+lastContent +", price: "+price+", content: "+content);
