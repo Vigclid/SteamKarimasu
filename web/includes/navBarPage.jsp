@@ -28,8 +28,8 @@
         <div class="side-bar-items">
             <a href="${pageContext.request.contextPath}/mainPage.jsp">Home</a>
             <a href="${pageContext.request.contextPath}/CategoryServlet?page=1&command=Name">Category</a>
-            <a href="#">Buy</a>
-            <a href="#">Rent</a>
+            <a href="${pageContext.request.contextPath}/commingSoon.jsp">Buy</a>
+            <a href="${pageContext.request.contextPath}/commingSoon.jsp">Rent</a>
         </div>
     </div>
 
@@ -81,7 +81,7 @@
                         </div>
                         <div class="row feature">
                             <div class="col-6">
-                                <a href="yourNewsLink" class="button-link">News</a>
+                                <a href="${pageContext.request.contextPath}/commingSoon.jsp" class="button-link">News</a>
                             </div>
                             <div class="col-6">
                                 <a href="LogoutServlet" class="button-link">LogOut</a>

@@ -1,4 +1,4 @@
-package controller.dto;
+package controller.DTO;
 
 public class userDTO{
     private int id;

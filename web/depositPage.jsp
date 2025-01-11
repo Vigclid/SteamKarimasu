@@ -31,7 +31,7 @@
         </script>
         <link rel="stylesheet" href="styles/css/depositPage.css">
         <script>
-            window.username = "<%= username%>"
+                window.username = "<%= username%>"
         </script>
         <script src="js/deposit.js">
         </script>
