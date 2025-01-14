@@ -361,17 +361,17 @@
             </form>
         </div>
 
-        <div class="col-5 more-infor-img">
-            <div class="main-img">
-                <img src="assets/img/buy&rentimg1.png" alt="">
-            </div>
+<%--        <div class="col-5 more-infor-img">--%>
+<%--            <div class="main-img">--%>
+<%--                <img src="assets/img/buy&rentimg1.png" alt="">--%>
+<%--            </div>--%>
 
 
-            <div class="sup-img">
-                <img src="assets/img/buy&rentimg2.png" alt="">
-                <img src="assets/img/buy&rentimg3.png" alt="">
-            </div>
-        </div>
+<%--            <div class="sup-img">--%>
+<%--                <img src="assets/img/buy&rentimg2.png" alt="">--%>
+<%--                <img src="assets/img/buy&rentimg3.png" alt="">--%>
+<%--            </div>--%>
+<%--        </div>--%>
 
     </div>
 

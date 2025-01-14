@@ -4,27 +4,31 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/mainPage.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/buyGamePage.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/styles/css/gamePage.css</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/SearchProduct.java</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/KcoinServlet.java</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/includes/navBarPage.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/joinRentPage.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/index.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/model/Entity/CoinBill.java</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/notEnoughMoney.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/profileRentInfoPage.jsp</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/Converter/ProductConverter.java</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/rentGamePage.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/ProductServlet.java</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/gamePage.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/js/deposit.js</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/buyGamePage.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/styles/css/gamePage.css</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/searchGamePage.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/SearchProduct.java</file>
+            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/addGamePage.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/includes/error_page/error500.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/EditGame.java</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/depositPage.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/KcoinServlet.java</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/includes/error_page/error404.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/joinRentPage.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/index.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/model/Entity/CoinBill.java</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/categoryPage.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/rentOutListPage.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/profilePage.jsp</file>
-            <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/web/notEnoughMoney.jsp</file>
             <file>file:/C:/Users/Admin/Documents/Github/SteamKarimasu/src/java/controller/LogoutServlet.java</file>
         </group>
     </open-files>

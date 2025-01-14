@@ -14,7 +14,7 @@ let AmountPayment = [
     { amountID: "200k", amount: "200000" },
     { amountID: "500k", amount: "500000" }
 ];
-let App_Script = "https://script.google.com/macros/s/AKfycbxRLH9OA9EeP9LWfdEMvKDclaGwh9fes1SaXc1STips-Qt71ECGBLhhgzK42PkEWB9U/exec";
+let App_Script = "https://script.google.com/macros/s/AKfycbxfe3CcjR_WzazOocts963-2JGlNAhiyCyHd2yyC9Pmfc2cDJq_K3TXoW1j1q4OqJSD/exec";
 document.addEventListener("DOMContentLoaded", () => {
     //Thong tin co ban khi chuyen khoan
     const amountDisplay = document.querySelector('.amount p');
@@ -82,6 +82,7 @@ async function checkPaid(price,content){
             const response = await fetch(App_Script);
             const data = await response.json();
             const lastPaid = data.data[data.data.length - 1];
+            console.log(lastPaid);
             lastPrice = lastPaid["Giá trị"];
             lastContent = lastPaid["Mô tả"];
 
